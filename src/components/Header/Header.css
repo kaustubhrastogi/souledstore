@@ -1,0 +1,21 @@
+.header-main .header-main-prim img{
+    width: 123px;
+    margin-left: 12px;
+}
+
+
+
+.header-main .ui.menu:first-child {
+    margin-top: 0;
+    background: crimson;
+    border-radius: 0;
+    color: white;
+}
+
+/* .header-main .ui.menu .active.item:hover {
+    background: rgb(17, 17, 17);
+    color: rgba(248, 236, 236, 0.95);
+} */
+.header-main .ui.menu .active{
+    background: white !important;
+}
