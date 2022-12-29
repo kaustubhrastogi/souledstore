@@ -8,6 +8,8 @@ import Women from "../StoreAgeCategory/Women";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("WOMEN");
+  const [itemSearch,setItemSearch] = useState('')
+  console.log(itemSearch)
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
   };
@@ -47,11 +49,15 @@ const Header = () => {
                 <p href="">Contact Us</p>
               </Menu.Item>
               <Menu.Item>
-                <Input icon="search" placeholder="Search..." />
+                <p href=""><Icon name="user" circular color='black' size="large"/></p>
+              </Menu.Item>
+              <Menu.Item>
+                <Input icon="search" placeholder="Search..." onChange={(e)=>{setItemSearch(e.target.value)}} />
               </Menu.Item>
             </Menu.Menu>
           </Menu>
         </div>
+       
       </div>
     </>
   );

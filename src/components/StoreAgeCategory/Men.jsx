@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Card, Image } from 'semantic-ui-react'
+import Footer from "../Footer/Footer";
 
 const Men = () => {
   return (
+    <>
     <div>
       <div>
         <div className="slide-container">
@@ -12,7 +14,9 @@ const Men = () => {
           />
         </div>
       </div>
+      <Footer/>
     </div>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import { Grid, Segment } from "semantic-ui-react";
 import WomenCollectionCardData from "../../Data/WomenCollectionCard";
 
 import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
+import Footer from "../Footer/Footer";
 
 const Women = () => {
   let gett = WomenCollectionCardData;
@@ -48,9 +49,13 @@ const Women = () => {
           })}
         </div>
       </div>
+      {/* ------------------------------------------------------------------------ */}
       {/* --------------------------------------------------------- CATEGORIES GRID  */}
 
       <div className="categories-grid"></div>
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };
