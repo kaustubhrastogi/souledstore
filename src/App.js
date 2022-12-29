@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Men from "./components/StoreAgeCategory/Men";
 import Women from "./components/StoreAgeCategory/Women";
 import Child from "./components/StoreAgeCategory/Child";
+import CarouselComp from "./components/CarouselComp";
 
 function App() {
   return <div className="App">

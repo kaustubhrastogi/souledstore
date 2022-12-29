@@ -4,18 +4,17 @@ import { Grid, Segment } from "semantic-ui-react";
 import WomenCollectionCardData from "../../Data/WomenCollectionCard";
 
 import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
+import CarouselComp from "../CarouselComp";
 
 const Women = () => {
   let gett = WomenCollectionCardData;
   console.log(gett);
   return (
+    
     <>
       <div>
         <div className="slide-container">
-          <img
-            src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-banner_22_1qB155u.jpg?format=webp&w=1366&dpr=1.0"
-            alt=""
-          />
+          <CarouselComp/>
         </div>
       </div>
       {/* ------------------------------------------------- COLLECTION CARD  */}
