@@ -14,7 +14,10 @@ const Women = () => {
     <>
       <div>
         <div className="slide-container">
-          <CarouselComp/>
+        <img
+            src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-banner_22_1qB155u.jpg?format=webp&w=1366&dpr=1.0"
+            alt="" 
+          />
         </div>
       </div>
       {/* ------------------------------------------------- COLLECTION CARD  */}
