@@ -1,14 +1,15 @@
 import React from "react";
 import "./AgeCategory.css";
 import { Grid, Segment } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import WomenCollectionCardData from "../../Data/WomenCollectionCard";
-
 import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 import Footer from "../Footer/Footer";
 
 const Women = () => {
-  let gett = WomenCollectionCardData;
-  console.log(gett);
+  const call=()=>{
+    console.log('kk')
+  }
   return (
     <>
       <div>
@@ -42,14 +43,14 @@ const Women = () => {
             return (
               <div className="categories-card-prim">
                 <div className="img-container">
-                  <img src={i.img2} alt="" />
+                  <img src={i.img2} alt=""/>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      {/* ------------------------------------------------------------------------ */}
+      {/* -------------------------------------------------------------------------- */}
       {/* --------------------------------------------------------- CATEGORIES GRID  */}
 
       <div className="categories-grid"></div>
