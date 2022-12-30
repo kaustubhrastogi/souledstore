@@ -42,9 +42,16 @@ const Header = () => {
               to="/Child"
             />
             <Menu.Menu position="right">
-              <Menu.Item>
-                <p href="">Contact Us</p>
-              </Menu.Item>
+              <Menu.Item 
+              name="Contactus" 
+              active={activeItem==="Contactus"}
+              onClick={categoryFunc}
+              as={Link}
+              to="/Contactus"
+              />
+                
+                {/* <p href="">Contact Us</p> */}
+
               <Menu.Item>
                 <p href="">
                   <Icon name="user" circular color="black" size="large" />
