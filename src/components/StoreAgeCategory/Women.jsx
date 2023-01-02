@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 import WomenCollectionCardData from "../../Data/WomenCollectionCard";
 import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 import Footer from "../Footer/Footer";
-import Carousel from "react-bootstrap/Carousel";
-
-import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 import CarouselComp from "../CarouselComp";
 // import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 
