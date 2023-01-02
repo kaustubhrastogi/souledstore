@@ -66,3 +66,30 @@
 .categories-grid{
   margin: 12px 49px;
 }
+.ordermaneg{
+display: flex;
+justify-content: center;
+   margin: 1rem 
+}
+.btndirection{
+  width: 20rem; display:flex;margin:2rem;
+}
+.btnstyle{
+ background-color: white;
+  border-color:gray;
+  width: 18rem;
+ padding: 23px;
+display: flex;
+flex-direction: column;
+color: gray;
+justify-content: center;
+align-items: center;
+}
+.dropdownstyle{
+margin-left: 400px;
+justify-content: center; 
+align-items: center;
+
+
+
+}
