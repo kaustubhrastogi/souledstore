@@ -1,11 +1,14 @@
 import React from "react";
 import { Button, Card, Image } from 'semantic-ui-react'
+import Footer from "../Footer/Footer";
 import Carousel from 'react-bootstrap/Carousel';
 import WomenCollectionCardData from "../../Data/WomenCollectionCard";
 import CarouselComp from "../CarouselComp";
 
+
 const Men = () => {
   return (
+    <>
     <div>
       <CarouselComp />
       <div className="categories-main-container">
@@ -22,7 +25,9 @@ const Men = () => {
           })}
         </div>
       </div>
+      <Footer/>
     </div>
+    </>
   );
 };
 

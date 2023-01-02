@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Input, Menu, Segment, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import Child from "../StoreAgeCategory/Child";
-import Men from "../StoreAgeCategory/Men";
-import Women from "../StoreAgeCategory/Women";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("WOMEN");
+  const [itemSearch, setItemSearch] = useState("");
+  console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
   };
@@ -54,10 +53,30 @@ const Header = () => {
                 {/* <p href="">Contact Us</p> */}
 
               <Menu.Item>
-                <Input icon="search" placeholder="Search..." />
+                <p href="">
+                  <Icon name="user" circular color="black" size="large" />
+                </p>
+              </Menu.Item>
+              {/* -------------------------------------------- sample btn  */}
+              <Menu.Item
+              name="datasub"
+              as={Link}
+              to="/subcategories"
+            />
+              {/* ---------------------------------------------------------  */}
+              <Menu.Item>
+                <Input
+                  icon="search"
+                  placeholder="Search..."
+                  onChange={(e) => {
+                    setItemSearch(e.target.value);
+                  }}
+                />
               </Menu.Item>
             </Menu.Menu>
           </Menu>
+        </div>
+        <div>
         </div>
       </div>
     </>

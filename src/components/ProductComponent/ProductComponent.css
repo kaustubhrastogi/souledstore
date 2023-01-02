@@ -1,0 +1,5 @@
+.product-component-main{
+    display: flex;
+    justify-content: space-around;
+    margin: 54px;
+}

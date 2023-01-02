@@ -1,16 +1,20 @@
 import React from "react";
 import "./AgeCategory.css";
 import { Grid, Segment } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import WomenCollectionCardData from "../../Data/WomenCollectionCard";
-import Carousel from 'react-bootstrap/Carousel';
+import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
+import Footer from "../Footer/Footer";
+import Carousel from "react-bootstrap/Carousel";
 
 import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 import CarouselComp from "../CarouselComp";
 // import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 
 const Women = () => {
-  let gett = WomenCollectionCardData;
-  console.log(gett);
+  const call = () => {
+    console.log("kk");
+  };
   return (
     
     <>
@@ -19,11 +23,11 @@ const Women = () => {
       <div className="collection-main-container">
         <h1>COLLECTIONS</h1>
         <div className="collection-cards">
-          {WomenCollectionCardData.map((i) => {
+          {WomenCollectionCardData.map((i,index) => {
             return (
               <div className="collection-card-prim">
                 <div>
-                  <img src={i.img} alt="" />
+                  <Link as={Link} to={`/Women/${index}`}><img src={i.img} alt="" /></Link>
                 </div>
               </div>
             );
@@ -45,9 +49,13 @@ const Women = () => {
           })}
         </div>
       </div>
+      {/* -------------------------------------------------------------------------- */}
       {/* --------------------------------------------------------- CATEGORIES GRID  */}
 
       <div className="categories-grid"></div>
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };

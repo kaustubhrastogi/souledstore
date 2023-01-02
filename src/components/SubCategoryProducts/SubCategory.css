@@ -1,0 +1,42 @@
+.subcategory-main {
+  /* border: 3px solid crimson; */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 14px 43px;
+  width: 70%;
+  
+}
+.card-main {
+  /* display: flex; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 3px -3px;
+  margin: 12px;
+}
+
+.subcategory-main-container {
+    display: flex;
+    
+}
+.subcategory-main-container .aside{
+    box-shadow: rgba(0, 0, 0, 0.253) 2.4px 2.4px 3.2px;
+    width: 222px;
+}
+.filter-div{
+    font-size: 14px;
+    margin-top: 12px;
+
+}
+.filter-div select{
+    background-color: aliceblue;
+    border: none;
+    width: 44%;
+    font-family: monospace;
+    margin: 4px;
+}
+
+.filter-div select option{
+    color: rgb(0, 0, 0);
+    font-size: 15.2px;
+}
+.subcategory-search{
+    margin-top: 13px;
+}
