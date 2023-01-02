@@ -4,8 +4,11 @@ import { useParams } from "react-router-dom";
 import { Icon,Button,Reveal,Image } from "semantic-ui-react";
 import cardMockData from "../../Data/cardMockData";
 import Footer from "../Footer/Footer";
+import { useDispatch } from "react-redux";
+import { addWish } from "../../redux/wishList-reducer";
 
 const ProductComponent = () => {
+  const dispatch = useDispatch()
   const { id } = useParams();
   const { name,img,category,price,offPrice,percentOff } = cardMockData[id];
   console.log('dddddddd',cardMockData)
@@ -38,7 +41,7 @@ const ProductComponent = () => {
                 <Button positive>
                 <Icon name='add to cart' /> ADD TO CART
                 </Button>
-                <Button basic color='red'>
+                <Button basic color='red' onClick={()=>{dispatch(addWish(cardMockData[id]))}}>
                 <Icon name='heart' />
                 ADD TO WISHLIST
                 </Button>
