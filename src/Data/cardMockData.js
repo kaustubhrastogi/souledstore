@@ -3,6 +3,7 @@ const cardMockData = [
     id: 1,
     name: "Courage: For Love",
     img:'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1661773633_3734009.jpg?format=webp&w=240&dpr=1.0',
+    imgMove:'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1661773633_3657738.jpg?format=webp&w=576&dpr=1.0',
     category: " T-Shirts",
     price: 699,
     offPrice:399,

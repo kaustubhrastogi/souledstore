@@ -36,10 +36,16 @@ const SubCategory = () => {
         <div className="aside">
           <div className="filter-div">
             <label htmlFor="">Filter</label>
-            <select name="" id="">
-              <option value="">Popular</option>
-              <option value="">Price(Low To High)</option>
-              <option value="">Price(High To Low)</option>
+            <select
+              name=""
+              id=""
+              onChange={(e) => {
+                console.log("val", e.target.value);
+              }}
+            >
+              <option value="popular">Popular</option>
+              <option value="ascending">Price(Low To High)</option>
+              <option value="descending">Price(High To Low)</option>
             </select>
           </div>
           {/* ------------------------------------------------------ Product Input Search  */}
@@ -52,12 +58,12 @@ const SubCategory = () => {
               }}
             />
           </div>
-          {/* ----------------------------------------------------------------- */}
         </div>
+
         <div className="subcategory-main">
           {mockSample.map((i, index) => (
             <SubCategoryCard
-              key={index}
+              index={index}
               id={i.id}
               img={i.img}
               name={i.name}
@@ -68,16 +74,17 @@ const SubCategory = () => {
           ))}
         </div>
       </div>
-      {/* -------------------------------------------- Getting Products after search  */}
+      {/* -------------------------------------------- Getting Products only after search  */}
       <div>
         <ul>
-          {filteredBooks.map(({ name, category, img }) => (
-            <div key={category}>
-              <strong>{name}</strong>
-              <br />
-              <img src={img} alt="" />
-            </div>
-          ))}
+          {searchText &&
+            filteredBooks.map(({ name, index, img }) => (
+              <div key={index}>
+                <strong>{name}</strong>
+                <br />
+                <img src={img} alt="" />
+              </div>
+            ))}
         </ul>
       </div>
     </>

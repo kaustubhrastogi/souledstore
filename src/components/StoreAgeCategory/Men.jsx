@@ -3,6 +3,7 @@ import { Button, Card, Image } from 'semantic-ui-react'
 import Footer from "../Footer/Footer";
 import Carousel from 'react-bootstrap/Carousel';
 
+
 const Men = () => {
   return (
     <>
