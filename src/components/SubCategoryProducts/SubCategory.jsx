@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import cardMockData from "../../Data/cardMockData";
 import SubCategoryCard from "./SubCategoryCard";
 import "./SubCategory.css";
-import { Input } from "semantic-ui-react";
+import { Icon, Input } from "semantic-ui-react";
+import { useDispatch } from "react-redux";
+import { addWish } from "../../redux/wishList-reducer";
+import { HeartComp } from "./HeartComp";
 
 const SubCategory = () => {
   const [mockSample, setMockSample] = useState([]);
   const [searchText, setSearchText] = useState("");
+  
   console.log("mocksample", mockSample);
+
+  
 
   function searchProduct(e) {
     console.log(e.target.value);
@@ -62,6 +68,7 @@ const SubCategory = () => {
 
         <div className="subcategory-main">
           {mockSample.map((i, index) => (
+            <div>
             <SubCategoryCard
               index={index}
               id={i.id}
@@ -71,6 +78,8 @@ const SubCategory = () => {
               price={i.price}
               offPrice={i.offPrice}
             />
+            <HeartComp index={index} mockSample={mockSample}/>
+            </div>
           ))}
         </div>
       </div>

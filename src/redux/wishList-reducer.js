@@ -8,12 +8,13 @@ const wishListSlice = createSlice({
         addWish : (state,action) => {
             state.data={wishListItem:[...state.data.wishListItem, action.payload]}
         },
-        removeWish : (state,action) =>{
-
+        removeWishListItem : (state,action) =>{
+            const newArray = state.data.wishListItem.filter((item,index)=>index != action.payload)
+            state.data={ wishListItem: newArray}
         }
     }
 })
 
 export default wishListSlice
 
-export const { addWish , removeWish} = wishListSlice.actions
+export const { addWish , removeWishListItem} = wishListSlice.actions
