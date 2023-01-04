@@ -14,7 +14,6 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   /* margin-top: 12px; */
 }
-<<<<<<< HEAD
 .collection-main-container .headings {
   /* border: 3pc solid crimson; */
   width: 40%;
@@ -26,9 +25,7 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-=======
 
->>>>>>> 29273b9 (loging and)
 .collection-main-container h1 {
   padding: 13px;
   font-family: "Kanit", sans-serif;
@@ -37,7 +34,6 @@
 .collection-cards {
   display: flex;
 }
-<<<<<<< HEAD
 .collection-card-prim P {
   color: rgb(0, 0, 0);
   font-family: "Karla", sans-serif;
@@ -49,9 +45,7 @@
   font-weight: bolder;
   margin: -13px auto;
 }
-=======
 
->>>>>>> 29273b9 (loging and)
 .collection-card-prim div img {
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   width: 62%;
