@@ -2,12 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 /* font-family: 'Macondo', cursive; */
 
-
-.header-main .header-main-prim img {
+/* .header-main-prim Menu{
+  min-height: 6vh;
+  margin-left: 23px;
+} */
+.ui.menu>.item:first-child {
+  border-radius: 0.28571429rem 0 0 0.28571429rem;
+  margin-left: 12%;
+}
+/* .header-main .header-main-prim img {
   width: 123px;
   margin-left: 12px;
-}
+  display: none;
+} */
 .header-main .logo-head {
+  width: 12%;
   font-family: 'Macondo', cursive;
   font-size: 2.3em;
   /* position: absolute; */
@@ -51,4 +60,9 @@
 }
 .ui.menu .active.item {
   font-family: "Playfair Display", serif;
+}
+.header-options{
+  min-height: 7vh;
+  background-color: white;
+  /* border: 1px solid rgb(73, 78, 82); */
 }

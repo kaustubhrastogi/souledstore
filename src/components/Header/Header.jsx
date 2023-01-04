@@ -16,10 +16,6 @@ const Header = () => {
       <div className="header-main">
         <div className="header-main-prim">
           <Menu pointing>
-            <p className="logo-head">
-              <p>Soul</p>
-              <p>Fabric</p>
-            </p>
             <Menu.Item
               name="WOMEN"
               active={activeItem === "WOMEN"}
@@ -72,7 +68,12 @@ const Header = () => {
             </Menu.Menu>
           </Menu>
         </div>
-        <div></div>
+        <div className="header-options">
+          <p className="logo-head">
+            <p>Soul</p>
+            <p>Fabric</p>
+          </p>
+        </div>
       </div>
     </>
   );
