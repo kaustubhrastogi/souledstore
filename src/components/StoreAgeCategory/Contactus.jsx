@@ -35,11 +35,11 @@ function BasicExample() {
           <div className='btndirection'>
 
 
-            <Button className='btnstyle'>
+            <Button className='btnstyle'  >
               <img
                 src="https://prod-img.thesouledstore.com/public/theSoul/images/my-account.png?format=webp&amp;w=300&amp;dpr=1.0" />
               <text> My Account</text>
-            </Button>
+            </Button >
           </div>
           <div className='btndirection'>
             <Button className='btnstyle' >
