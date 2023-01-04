@@ -1,10 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+/* font-family: 'Macondo', cursive; */
+
 
 .header-main .header-main-prim img {
   width: 123px;
   margin-left: 12px;
 }
+.header-main .logo-head {
+  font-family: 'Macondo', cursive;
+  font-size: 2.3em;
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%; */
+  margin: 13px;
+  font-weight: 900;
+  background-image: linear-gradient(rgb(240, 224, 2), rgb(235, 213, 16));
+  background-size: 100% 6px;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+   transition: background-size .7s, background-position .5s ease-in-out;
+}
 
+
+.header-main .logo-head:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}
+.header-main .logo-head p{
+  margin: 0px;
+  line-height: 27px;
+}
 .header-main .ui.menu:first-child {
   margin-top: 0;
   background: rgba(220, 20, 60, 0.938);

@@ -16,10 +16,10 @@ const Header = () => {
       <div className="header-main">
         <div className="header-main-prim">
           <Menu pointing>
-            <img
-              className="appLogo"
-              src="https://www.thesouledstore.com/static/img/300x157-twitter.png"
-            />
+            <p className="logo-head">
+              <p>Soul</p>
+              <p>Fabric</p>
+            </p>
             <Menu.Item
               name="WOMEN"
               active={activeItem === "WOMEN"}
@@ -42,28 +42,21 @@ const Header = () => {
               to="/Child"
             />
             <Menu.Menu position="right">
-              <Menu.Item 
-              name="Contactus" 
-              active={activeItem==="Contactus"}
-              onClick={categoryFunc}
-              as={Link}
-              to="/Contactus"
+              <Menu.Item
+                name="Contactus"
+                active={activeItem === "Contactus"}
+                onClick={categoryFunc}
+                as={Link}
+                to="/Contactus"
               />
-                
-                {/* <p href="">Contact Us</p> */}
+
+              {/* <p href="">Contact Us</p> */}
 
               <Menu.Item>
                 <p href="">
                   <Icon name="user" circular color="black" size="large" />
                 </p>
               </Menu.Item>
-              {/* -------------------------------------------- sample btn  */}
-              <Menu.Item
-              name="datasub"
-              as={Link}
-              to="/subcategories"
-            />
-              {/* ---------------------------------------------------------  */}
               <Menu.Item>
                 <Input
                   icon="search"
@@ -73,11 +66,13 @@ const Header = () => {
                   }}
                 />
               </Menu.Item>
+              <Menu.Item as={Link} to="/cart">
+                <Icon name="in cart" size="big" inverted color="white" />
+              </Menu.Item>
             </Menu.Menu>
           </Menu>
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
     </>
   );

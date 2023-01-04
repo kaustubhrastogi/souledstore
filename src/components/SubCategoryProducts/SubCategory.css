@@ -40,3 +40,10 @@
 .subcategory-search{
     margin-top: 13px;
 }
+
+.subcategory-main-filtered{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 22%;
+    width: 68%;
+}

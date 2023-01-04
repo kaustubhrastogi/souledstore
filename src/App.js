@@ -8,6 +8,7 @@ import CarouselComp from "./components/CarouselComp";
 import SubCategory from "./components/SubCategoryProducts/SubCategory";
 import Contactus from "./components/StoreAgeCategory/Contactus";
 import ProductComponent from "./components/ProductComponent/ProductComponent";
+import CartComponent from "./components/CartComponent/CartComponent";
 
 
 function App() {
@@ -20,7 +21,9 @@ function App() {
         <Route path="/Women/:id" element={<Women/>} />
         <Route path="/Men" element={<Men />} />
         <Route path="/Child" element={<Child />} />
-        <Route path="/subcategories" element={<SubCategory />} />
+        <Route path="/subcategory" element={<SubCategory />} />
+        <Route path="/subcategory/:id" element={<SubCategory />} />
+        <Route path="/cart" element={<CartComponent/>} />
         <Route path="/ProductComponent" element={<ProductComponent />} />
         <Route path="/ProductComponent/:id" element={<ProductComponent/>} />
         <Route path="/Contactus" element={<Contactus />} />
