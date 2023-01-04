@@ -11,6 +11,7 @@ import ProductComponent from "./components/ProductComponent/ProductComponent";
 import { WishListComp } from "./components/WishListComp";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import CartComponent from "./components/CartComponent/CartComponent";
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
         <Route path="/Women/:id" element={<Women/>} />
         <Route path="/Men" element={<Men />} />
         <Route path="/Child" element={<Child />} />
-        <Route path="/subcategories" element={<SubCategory />} />
+        <Route path="/subcategory" element={<SubCategory />} />
+        <Route path="/subcategory/:id" element={<SubCategory />} />
+        <Route path="/cart" element={<CartComponent/>} />
         <Route path="/ProductComponent" element={<ProductComponent />} />
         <Route path="/ProductComponent/:id" element={<ProductComponent/>} />
         <Route path="/Contactus" element={<Contactus />} />

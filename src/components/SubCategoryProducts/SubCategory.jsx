@@ -6,20 +6,22 @@ import { Icon, Input } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
 import { addWish } from "../../redux/wishList-reducer";
 import { HeartComp } from "./HeartComp";
+import { useParams, Link } from "react-router-dom";
+import TryMock from "../../Data/TryMock";
 
 const SubCategory = () => {
+  const { id } = useParams();
+  console.log('TryMock is......',TryMock.category)
+  // console.log('TryMock is',TryMock.category[id].cardOneHead ,TryMock.category[id].data[id])
+  const { index } = useParams();
+  // console.log('trymock...index', index);
+  // console.log(`TryMock.category[${index}].cardOneHead`);
   const [mockSample, setMockSample] = useState([]);
   const [searchText, setSearchText] = useState("");
-  
-  console.log("mocksample", mockSample);
-
-  
-
-  function searchProduct(e) {
-    console.log(e.target.value);
-  }
-  // ---------------------------------------------------- For Filter products after search
-  const filteredBooks = mockSample.filter(
+  // console.log('route index',index)
+  // console.log("mocksample", mockSample);
+  // ----------------------------------------- Function For Filter products after search
+  const filteredProducts = mockSample.filter(
     ({ name, category }) =>
       name.toLowerCase().includes(searchText.toLowerCase()) ||
       category.toLowerCase().includes(searchText.toLowerCase())
@@ -32,11 +34,11 @@ const SubCategory = () => {
   // ----------------------------------
 
   useEffect(() => {
-    setMockSample(cardMockData);
+    setMockSample(TryMock.category[id].data);
   }, []);
   return (
     <>
-      <p>Mens-T-Shirts-{mockSample.length} items</p>
+    <h5><h2>{TryMock.category[id].cardOneHead}</h2> Collection -{filteredProducts.length} items</h5>
       <div className="subcategory-main-container">
         {/* ------------------------------------------------ Aside div for filter options  */}
         <div className="aside">
@@ -66,35 +68,42 @@ const SubCategory = () => {
           </div>
         </div>
 
-        <div className="subcategory-main">
-          {mockSample.map((i, index) => (
-            <div>
-            <SubCategoryCard
-              index={index}
-              id={i.id}
-              img={i.img}
-              name={i.name}
-              category={i.category}
-              price={i.price}
-              offPrice={i.offPrice}
-            />
-            <HeartComp index={index} mockSample={mockSample}/>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* -------------------------------------------- Getting Products only after search  */}
-      <div>
-        <ul>
-          {searchText &&
-            filteredBooks.map(({ name, index, img }) => (
-              <div key={index}>
-                <strong>{name}</strong>
-                <br />
-                <img src={img} alt="" />
-              </div>
+        {/* -------------------------------------------- Getting Products before and after search  */}
+        {searchText ? (
+          <div className="subcategory-main">
+            {filteredProducts.map((i, index) => (
+              <>
+              <SubCategoryCard
+                index={index}
+                id={i.id}
+                img={i.img}
+                name={i.name}
+                category={i.category}
+                price={i.price}
+                offPrice={i.offPrice}
+              />
+              <HeartComp index={index} mockSample={filteredProducts}/>
+              </>
             ))}
-        </ul>
+          </div>
+        ) : (
+          <div className="subcategory-main">
+            {mockSample.map((i, index) => (
+              <>
+              <SubCategoryCard
+                index={index}
+                id={i.id}
+                img={i.img}
+                name={i.name}
+                category={i.category}
+                price={i.price}
+                offPrice={i.offPrice}
+              />
+              <HeartComp index={index} mockSample={mockSample}/>
+              </>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

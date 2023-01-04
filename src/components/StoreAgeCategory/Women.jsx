@@ -6,25 +6,26 @@ import WomenCollectionCardData from "../../Data/WomenCollectionCard";
 import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 import Footer from "../Footer/Footer";
 import CarouselComp from "../CarouselComp";
-// import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
 
 const Women = () => {
-  const call = () => {
-    console.log("kk");
-  };
   return (
-    
     <>
-      <CarouselComp/>
+      <CarouselComp />
       {/* ------------------------------------------------- COLLECTION CARD  */}
       <div className="collection-main-container">
+        <div className="headings">
+          <h2>MEN IN STYLE</h2>
+        </div>
         <h1>COLLECTIONS</h1>
         <div className="collection-cards">
-          {WomenCollectionCardData.map((i,index) => {
+          {WomenCollectionCardData.map((i, index, name) => {
             return (
               <div className="collection-card-prim">
                 <div>
-                  <Link as={Link} to={`/Women/${index}`}><img src={i.img} alt="" /></Link>
+                  <Link to={`/subcategory/${index}`}>
+                    <img key="{item}" src={i.img} alt="" />
+                  </Link>
+                  <p>{i.cardOneHead}</p>
                 </div>
               </div>
             );
