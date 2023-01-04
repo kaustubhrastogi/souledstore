@@ -48,7 +48,10 @@ const Header = () => {
 
               {/* <p href="">Contact Us</p> */}
 
-              <Menu.Item>
+              <Menu.Item
+              name="WishListComp"
+              as={Link}
+              to="/WishListComp">
                 <p href="">
                   <Icon name="user" circular color="black" size="large" />
                 </p>

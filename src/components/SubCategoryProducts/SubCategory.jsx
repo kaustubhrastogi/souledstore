@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import cardMockData from "../../Data/cardMockData";
 import SubCategoryCard from "./SubCategoryCard";
 import "./SubCategory.css";
-import { Input } from "semantic-ui-react";
+import { Icon, Input } from "semantic-ui-react";
+import { useDispatch } from "react-redux";
+import { addWish } from "../../redux/wishList-reducer";
+import { HeartComp } from "./HeartComp";
 import { useParams, Link } from "react-router-dom";
 import TryMock from "../../Data/TryMock";
 
@@ -69,6 +72,7 @@ const SubCategory = () => {
         {searchText ? (
           <div className="subcategory-main">
             {filteredProducts.map((i, index) => (
+              <>
               <SubCategoryCard
                 index={index}
                 id={i.id}
@@ -78,11 +82,14 @@ const SubCategory = () => {
                 price={i.price}
                 offPrice={i.offPrice}
               />
+              <HeartComp index={index} mockSample={filteredProducts}/>
+              </>
             ))}
           </div>
         ) : (
           <div className="subcategory-main">
             {mockSample.map((i, index) => (
+              <>
               <SubCategoryCard
                 index={index}
                 id={i.id}
@@ -92,6 +99,8 @@ const SubCategory = () => {
                 price={i.price}
                 offPrice={i.offPrice}
               />
+              <HeartComp index={index} mockSample={mockSample}/>
+              </>
             ))}
           </div>
         )}

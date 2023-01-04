@@ -1,7 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Dropdown } from 'semantic-ui-react'
+import { Dropdown, Grid, List, Icon } from 'semantic-ui-react'
+import Footer from '../Footer/Footer';
+import Buttoncomponent from './Buttoncomponent';
 import Faqs from './Faqs';
+import Linkcomponent from './Linkcomponent';
+import Login from './Login';
 
 const options = [
   { key: 'angular', text: 'Angularjfhjfhfhfh', value: 'angular' },
@@ -28,55 +32,48 @@ function BasicExample() {
   return (
     <>
       <div>
-        <h1 className='odermange'>Manage Order Easily</h1>
-        <div className='btndirection'>
-
-        
-          <div className='btndirection'>
-
-
-            <Button className='btnstyle'>
-              <img
-                src="https://prod-img.thesouledstore.com/public/theSoul/images/my-account.png?format=webp&amp;w=300&amp;dpr=1.0" />
-              <text> My Account</text>
-            </Button>
-          </div>
-          <div className='btndirection'>
-            <Button className='btnstyle' >
-              <img
-                src="https://prod-img.thesouledstore.com/public/theSoul/images/track.png?format=webp&amp;w=300&amp;dpr=1.0" />
-              <text> Track</text>
-            </Button>
-          </div>
-          <div className='btndirection'>
-            <Button className='btnstyle' >
-              <img
-                src="https://prod-img.thesouledstore.com/public/theSoul/images/return.png?format=webp&amp;w=240&amp;dpr=1.0" alt="Return" class="gm-added gm-loaded gm-observing gm-observing-cb" />
-              <text> Return</text>
-            </Button>
-          </div>
-          <div className='btndirection'>
-            <Button className='btnstyle' >
-              <img
-                src="https://prod-img.thesouledstore.com/public/theSoul/images/cancel.png?format=webp&amp;w=240&amp;dpr=1.0" alt="Cancel" class="gm-added gm-loaded gm-observing gm-observing-cb" />
-              <text > Cancel</text>
-            </Button>
-          </div>
-
-
-      </div>
-      <div style={{ backgroundColor: 'rgb(0,89,89)', height: '80px' }}>
-        <h1>What can we help you with today?</h1>
-        <div style={{ justifyContent: 'center', position: 'absolute' }}>
-          <Dropdown placeholder='Skills' fluid multiple selection options={options}
-            className='dropdownstyle' />
+        <h1 className='divspace'>Manage Order Easily</h1>
+        <div className='btndirection' >
+          <Buttoncomponent />
         </div>
-      </div>
-      <div>
-        <Faqs />
-      </div>
 
-    </div>
+        <div className='sp1'>
+          <h1>What can we help you with today?</h1>
+          <div >
+            <Dropdown placeholder='Skills'
+             fluid multiple selection options={options}
+              style={{ width: '400px', margin: 'auto' }} />
+          </div>
+        </div>
+
+        <div className='divspace' >
+          <Grid>
+            <Grid.Column >
+              <Faqs />
+            </Grid.Column>
+          </Grid>
+
+          <div className='divspace'>
+            <h1>Need more help? Get in touch.</h1>
+            <h3>Speak With Us</h3>
+            <p>Mon-Sun: 9:00 AM to 8:00 PM </p>
+            <p><Icon name="phone" /> 630-6640-599 </p>
+            <h1>Stay in touch</h1>
+
+            <div className='linkstyle'>
+              <Linkcomponent />     
+            </div>
+          </div>
+        </div>
+        <div >
+        <Login />
+        </div>
+        <div className='divspace'>
+          
+          <Footer />
+        </div>
+
+      </div>
     </>
 
   );

@@ -8,12 +8,18 @@ import CarouselComp from "./components/CarouselComp";
 import SubCategory from "./components/SubCategoryProducts/SubCategory";
 import Contactus from "./components/StoreAgeCategory/Contactus";
 import ProductComponent from "./components/ProductComponent/ProductComponent";
+import { WishListComp } from "./components/WishListComp";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 import CartComponent from "./components/CartComponent/CartComponent";
+import Signin from "./components/StoreAgeCategory/Signin";
+import Signup from "./components/StoreAgeCategory/Signup";
 
 
 function App() {
   return (
     <div className="App">
+    <Provider store={store}>
       <Home />
       <Routes>
         <Route path="/" element={<Women />} />
@@ -27,7 +33,12 @@ function App() {
         <Route path="/ProductComponent" element={<ProductComponent />} />
         <Route path="/ProductComponent/:id" element={<ProductComponent/>} />
         <Route path="/Contactus" element={<Contactus />} />
+        <Route path="/WishListComp" element={<WishListComp />} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/Signup" element={<Signup/>} />
+
       </Routes>
+      </Provider>
     </div>
   );
 }

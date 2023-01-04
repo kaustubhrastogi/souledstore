@@ -11,9 +11,12 @@ import {
 } from "semantic-ui-react";
 import cardMockData from "../../Data/cardMockData";
 import Footer from "../Footer/Footer";
+import { useDispatch } from "react-redux";
+import { addWish } from "../../redux/wishList-reducer";
 import TryMock from "../../Data/TryMock";
 
 const ProductComponent = () => {
+  const dispatch = useDispatch()
   const { id } = useParams();
   console.log("try mock here...", TryMock.category[id].data[id]);
   const { name, img, category, price, offPrice, percentOff } =TryMock.category[id].data[id];
