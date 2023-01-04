@@ -12,6 +12,8 @@ import { WishListComp } from "./components/WishListComp";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import CartComponent from "./components/CartComponent/CartComponent";
+import Signin from "./components/StoreAgeCategory/Signin";
+import Signup from "./components/StoreAgeCategory/Signup";
 
 
 function App() {
@@ -32,6 +34,9 @@ function App() {
         <Route path="/ProductComponent/:id" element={<ProductComponent/>} />
         <Route path="/Contactus" element={<Contactus />} />
         <Route path="/WishListComp" element={<WishListComp />} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/Signup" element={<Signup/>} />
+
       </Routes>
       </Provider>
     </div>
