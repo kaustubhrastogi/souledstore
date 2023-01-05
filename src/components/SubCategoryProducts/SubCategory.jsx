@@ -100,7 +100,7 @@ const SubCategory = () => {
                   offPrice={i.offPrice}
                 />
                 <div className="wishlist-icon">
-                <HeartComp index={index} mockSample={filteredProducts} />
+                <HeartComp index={index} mockSample={i} />
                 </div>
                </div>
               
