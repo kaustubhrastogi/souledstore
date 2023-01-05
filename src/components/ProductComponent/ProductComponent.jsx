@@ -16,10 +16,11 @@ import { addWish } from "../../redux/wishList-reducer";
 import TryMock from "../../Data/TryMock";
 
 const ProductComponent = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { id } = useParams();
   console.log("try mock here...", TryMock.category[id].data[id]);
-  const { name, img, category, price, offPrice, percentOff } =TryMock.category[id].data[id];
+  const { name, img, category, price, offPrice, percentOff } =
+    TryMock.category[id].data[id];
 
   const options = [
     {
@@ -62,31 +63,26 @@ const ProductComponent = () => {
           <hr />
           <h3>
             <Icon name="rupee sign" />
-            {offPrice}{" "}
+            {offPrice}
             <strike>
               <Icon name="rupee sign" />
-              {price}{" "}
+              {price}
             </strike>
           </h3>
           <span style={{ color: "red", marginLeft: "9px" }}>
-            {" "}
             {percentOff} OFF
           </span>
 
-          <h4>
-            <Header as="h4">
-              <Icon name="trophy" />
-              <Header.Content>
-                Select Size: 
-                <Dropdown
-                  inline
-                  header="Select Size"
-                  options={options}
-                  defaultValue={options[0].value}
-                />
-              </Header.Content>
-            </Header>{" "}
-          </h4>
+          <div className="size-main">
+            <h4>Please select a size.</h4>
+           <ul>
+            <li>XS</li>
+            <li>M</li>
+            <li>L</li>
+            <li>XL</li>
+            <li>XXL</li>
+           </ul>
+          </div>
           <p>Quantity</p>
 
           <div>
