@@ -76,6 +76,7 @@ const Header = () => {
             <p>Soul</p>
             <p>Fabric</p>
           </p>
+          <p className="header-options">hello</p>
         </div>
       </div>
     </>
