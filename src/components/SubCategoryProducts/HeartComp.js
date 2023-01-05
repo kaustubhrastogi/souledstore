@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Icon } from 'semantic-ui-react'
 import { addWish, removeWishListItem } from '../../redux/wishList-reducer'
-
+import './SubCategory.css'
 export const HeartComp = ({mockSample,index}) => {
     const [heartColor, setHeartColor] = useState("white")
     const dispatch = useDispatch()
   return (
-    <div>
+    <div className='wishlist-icon'>
         <Icon 
             name="heart" 
             circular

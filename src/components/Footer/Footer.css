@@ -1,7 +1,7 @@
 .footer-main{
     display: flex;
     background-color: rgb(173, 24, 24);
-    color: rgb(255, 255, 255);
+    color: rgb(17, 17, 17);
     /* flex-direction: row; */
     margin-top: -6px;
 }
@@ -22,4 +22,17 @@
 .footer-child-four .purple,.footer-child-four .blue,.footer-child-four .yellow{
     margin:0px 6px;
     
+}
+.footer-main p{
+    color: rgba(228, 228, 227, 0.747);
+    cursor: pointer;
+}
+.footer-main p:hover{
+    color: yellow;
+    cursor: pointer;
+}
+.footer-child-one p{
+    text-align: left;
+    margin: 4px 67px;
+    width: 100%;
 }

@@ -11,15 +11,11 @@ import TryMock from "../../Data/TryMock";
 
 const SubCategory = () => {
   const { id } = useParams();
-  console.log('TryMock is......',TryMock.category)
+  console.log("TryMock is......", TryMock.category);
   // console.log('TryMock is',TryMock.category[id].cardOneHead ,TryMock.category[id].data[id])
   const { index } = useParams();
-  // console.log('trymock...index', index);
-  // console.log(`TryMock.category[${index}].cardOneHead`);
   const [mockSample, setMockSample] = useState([]);
   const [searchText, setSearchText] = useState("");
-  // console.log('route index',index)
-  // console.log("mocksample", mockSample);
   // ----------------------------------------- Function For Filter products after search
   const filteredProducts = mockSample.filter(
     ({ name, category }) =>
@@ -38,7 +34,10 @@ const SubCategory = () => {
   }, []);
   return (
     <>
-    <h5><h2>{TryMock.category[id].cardOneHead}</h2> Collection -{filteredProducts.length} items</h5>
+      <h5>
+        <h2>{TryMock.category[id].cardOneHead}</h2> Collection -
+        {filteredProducts.length} items
+      </h5>
       <div className="subcategory-main-container">
         {/* ------------------------------------------------ Aside div for filter options  */}
         <div className="aside">
@@ -73,34 +72,38 @@ const SubCategory = () => {
           <div className="subcategory-main">
             {filteredProducts.map((i, index) => (
               <>
-              <SubCategoryCard
-                index={index}
-                id={i.id}
-                img={i.img}
-                name={i.name}
-                category={i.category}
-                price={i.price}
-                offPrice={i.offPrice}
-              />
-              <HeartComp index={index} mockSample={filteredProducts}/>
+                <SubCategoryCard
+                  index={index}
+                  id={i.id}
+                  img={i.img}
+                  name={i.name}
+                  category={i.category}
+                  price={i.price}
+                  offPrice={i.offPrice}
+                />
+                
               </>
             ))}
           </div>
         ) : (
           <div className="subcategory-main">
             {mockSample.map((i, index) => (
-              <>
-              <SubCategoryCard
-                index={index}
-                id={i.id}
-                img={i.img}
-                name={i.name}
-                category={i.category}
-                price={i.price}
-                offPrice={i.offPrice}
-              />
-              <HeartComp index={index} mockSample={mockSample}/>
-              </>
+              
+               <div style={{border:'none'}} className="card">
+                 <SubCategoryCard
+                  index={index}
+                  id={i.id}
+                  img={i.img}
+                  name={i.name}
+                  category={i.category}
+                  price={i.price}
+                  offPrice={i.offPrice}
+                />
+                <div className="wishlist-icon">
+                <HeartComp index={index} mockSample={filteredProducts} />
+                </div>
+               </div>
+              
             ))}
           </div>
         )}
