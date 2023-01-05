@@ -86,6 +86,9 @@ const SubCategory = () => {
                   price={i.price}
                   offPrice={i.offPrice}
                 />
+                <div className="wishlist-icon">
+                <HeartComp index={index} mockSample={i} />
+                </div>
               </>
             ))}
           </div>
