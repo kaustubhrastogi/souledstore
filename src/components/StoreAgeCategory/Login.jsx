@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 import {  Link } from "react-router-dom";
+import Footer from '../Footer/Footer';
 
 const colors = [
     'red',
@@ -16,7 +17,7 @@ class ExampleMenu extends Component {
         const { activeItem } = this.state
 
         return (
-            <div style={{ width: '400px', margin: 'auto' }}>
+            <div style={{  marginTop: '20px' }}>
 
 
                 <Menu color={color} widths={2}>
@@ -35,6 +36,7 @@ class ExampleMenu extends Component {
                         to="/Signup"
                     />
                 </Menu>
+             
             </div>
         )
     }

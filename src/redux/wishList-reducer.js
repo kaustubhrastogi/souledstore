@@ -9,7 +9,7 @@ const wishListSlice = createSlice({
             state.data={wishListItem:[...state.data.wishListItem, action.payload]}
         },
         removeWishListItem : (state,action) =>{
-            const newArray = state.data.wishListItem.filter((item,index)=>index != action.payload)
+            const newArray = state.data.wishListItem.filter((item,index)=>item.id != action.payload)
             state.data={ wishListItem: newArray}
         }
     }

@@ -41,14 +41,14 @@ const SubCategoryCard = ({
                 </strike>
               </span>
             </Card.Description>
-            <Button color="facebook">
+            {/* <Button color="facebook">
               <Icon
                 name="add to cart"
                 as={Link}
                 to={`/ProductComponent/${index}`}
               />
               Buy
-            </Button>
+            </Button> */}
           </Card>
         </div>
       </div>

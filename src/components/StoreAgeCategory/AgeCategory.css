@@ -154,11 +154,8 @@ display: flex;
 }
 
 .linkstyle{
-  display: flex;
-  justify-content: space-around;
-  width: 400px;
+  width: 20rem;
 margin: auto;
-font-size: 20px;
 color: red;
 
 
