@@ -19,7 +19,7 @@ export const WishListComp = () => {
               price={i.price}
               offPrice={i.offPrice}
             />
-            <button onClick={()=>dispatch(removeWishListItem(index))}>remove</button>
+            <button onClick={()=>dispatch(removeWishListItem(i.id))}>remove</button>
             </div>
           )):
           <h1>Wish List is Empty</h1>}

@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Icon } from 'semantic-ui-react'
 import { addWish, removeWishListItem } from '../../redux/wishList-reducer'
 import './SubCategory.css'
-export const HeartComp = ({mockSample,index}) => {
+export const HeartComp = ({mockSample,index,id}) => {
     const [heartColor, setHeartColor] = useState("white")
     const {wishListItem} = useSelector((state)=>state.wishList.data)
     console.log('wishListItem===>',wishListItem)
     console.log('mockSample===>',mockSample)
+    console.log('index==>',index)
     const dispatch = useDispatch()
     useEffect(()=>{
       wishListItem.map((e)=>{
@@ -30,7 +31,7 @@ export const HeartComp = ({mockSample,index}) => {
                 dispatch(addWish(mockSample))
               }else if(heartColor=="red"){
                 setHeartColor("white")
-                dispatch(removeWishListItem(index))
+                dispatch(removeWishListItem(id))
               }
               }}
              /> 

@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import SubCategoryCard from "./SubCategoryCard";
 import "./SubCategory.css";
-import { Icon, Input } from "semantic-ui-react";
+import { Button, Icon, Input } from "semantic-ui-react";
 import { HeartComp } from "./HeartComp";
 import { useParams } from "react-router-dom";
 import TryMock from "../../Data/TryMock";
+import { useDispatch } from "react-redux";
+import { addCart } from "../../redux/cart-reducer";
 
 const SubCategory = () => {
   const { id } = useParams();
   console.log("TryMock is......", TryMock.category);
+  const dispatch = useDispatch()
   // console.log('TryMock is',TryMock.category[id].cardOneHead ,TryMock.category[id].data[id])
   const { index } = useParams();
   const [mockSample, setMockSample] = useState([]);
@@ -105,8 +108,19 @@ const SubCategory = () => {
                   price={i.price}
                   offPrice={i.offPrice}
                 />
+                
                 <div className="wishlist-icon">
-                <HeartComp index={index} mockSample={i} />
+                <HeartComp index={index} mockSample={i} id={i.id}/>
+                </div>
+                <div>
+                <Button color="facebook" style={{width:'88%',marginLeft:5}}
+                onClick={()=>{
+                  dispatch(addCart(i))
+                  // dispatch(totalAmount(i.price))
+                  }}>
+                  <Icon name="add to cart"/>
+                  Add to Cart
+                </Button>
                 </div>
               </div>
             ))}
