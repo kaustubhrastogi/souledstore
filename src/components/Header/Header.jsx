@@ -2,51 +2,44 @@ import React, { useEffect, useState } from "react";
 import { Input, Menu, Segment, Icon, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import Badge from 'react-bootstrap/Badge';
-import Dropdowns from "./Dropdowns";
-import ButtonIcon from "./ButtonIcon";
+import Badge from "react-bootstrap/Badge";
 import { useSelector } from "react-redux";
 
 const linkuri = [
   {
     uri: "",
-    name: 'Serch',
-    value: 'search'
-
+    name: "Serch",
+    value: "search",
   },
   {
     uri: "",
-    name: 'User',
-    value: 'user'
-
+    name: "User",
+    value: "user",
   },
   {
     uri: "",
-    name: 'Whilist',
-    value: 'heart'
-
+    name: "Whilist",
+    value: "heart",
   },
   {
     uri: "",
-    name: 'Cart',
-    value: 'cart'
-
+    name: "Cart",
+    value: "cart",
   },
-]
+];
 const Header = () => {
   const [activeItem, setActiveItem] = useState("Men");
   const [itemSearch, setItemSearch] = useState("");
-  const [username ,setUsername]=useState("");
+  const [username, setUsername] = useState("");
   // useEffect(()=>{
   //   let olddata = localStorage.getItem('datainput')
   //   let oldArr = JSON.parse(olddata)
   //   const user=oldArr
   //   setUsername(user.email)
   //  console.log(username)
-  // },[]) 
+  // },[])
 
-       
-  const {wishListItem} = useSelector((state)=>state.wishList.data)
+  const { wishListItem } = useSelector((state) => state.wishList.data);
 
   console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
@@ -57,13 +50,11 @@ const Header = () => {
     <>
       <div className="header-main">
         <div className="header-main-prim">
-          <div className="header-options">
+          <Menu pointing>
             <p className="logo-head">
               <p>Soul</p>
               <p>Fabric</p>
             </p>
-          </div>
-          <Menu pointing>
             <Menu.Item
               name="MEN"
               active={activeItem === "MEN"}
@@ -87,34 +78,25 @@ const Header = () => {
             />
             <Menu.Menu position="right">
               <Menu.Item
-
+                name="Contact Us"
                 active={activeItem === "Contactus"}
                 onClick={categoryFunc}
                 as={Link}
                 to="/Contactus"
               />
-
-              {/* <p href="">Contact Us</p> */}
-
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
-              
                 <p href="">
                   <Icon name="user" circular color="black" size="large" />
                   {username}
                 </p>
-
               </Menu.Item>
-              <Menu.Item
-                name="WishListComp"
-                as={Link}
-                to="/WishListComp">
+              <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
                 <p href="">
-                  <Icon  name="heart" circular color="black" size="large" 
-                  
-                  />
-                  
-                  <Badge  className="badgestyle" style={{color:'black',}}>{wishListItem.length}</Badge>
-                  
+                  <Icon name="heart" circular color="black" size="large" />
+
+                  <Badge className="badgestyle" style={{ color: "black" }}>
+                    {wishListItem.length}
+                  </Badge>
                 </p>
               </Menu.Item>
               <Menu.Item>
@@ -132,12 +114,6 @@ const Header = () => {
             </Menu.Menu>
           </Menu>
         </div>
-        <div className="header-options">
-          <p className="logo-head">
-            <p>Soul</p>
-            <p>Fabric</p>
-          </p>
-        </div>
       </div>
     </>
   );
@@ -145,8 +121,10 @@ const Header = () => {
 
 export default Header;
 
-{/* <div style={{ width:'100rem'}}>
+{
+  /* <div style={{ width:'100rem'}}>
 <Dropdowns/>
 </div>
 <div style={{ width:'20rem'}}>
-<ButtonIcon value={linkuri}/>  </div> */}
+<ButtonIcon value={linkuri}/>  </div> */
+}

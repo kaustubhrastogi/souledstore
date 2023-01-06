@@ -47,7 +47,7 @@
   background: rgba(220, 20, 60, 0.938);
   border-radius: 0;
   color: white;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 /* .header-main .ui.menu .active.item:hover {
