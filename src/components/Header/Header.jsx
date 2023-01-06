@@ -37,13 +37,13 @@ const Header = () => {
   const [activeItem, setActiveItem] = useState("WOMEN");
   const [itemSearch, setItemSearch] = useState("");
   const [username ,setUsername]=useState("");
-  useEffect(()=>{
-    let olddata = localStorage.getItem('datainput')
-    let oldArr = JSON.parse(olddata)
-    const user=oldArr
-    setUsername(user.email)
-   console.log(username)
-  },[])
+  // useEffect(()=>{
+  //   let olddata = localStorage.getItem('datainput')
+  //   let oldArr = JSON.parse(olddata)
+  //   const user=oldArr
+  //   setUsername(user.email)
+  //  console.log(username)
+  // },[]) 
 
        
   const {wishListItem} = useSelector((state)=>state.wishList.data)
