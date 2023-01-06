@@ -76,7 +76,6 @@ const Header = () => {
             <p>Soul</p>
             <p>Fabric</p>
           </p>
-
         </div>
       </div>
     </>

@@ -74,4 +74,5 @@
 .ui.menu .item>i.icon:hover{
   transform: scale(1.1);
   transition: .4s;
+  border: 1px solid rgb(73, 78, 82);
 }
