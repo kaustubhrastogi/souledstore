@@ -8,12 +8,14 @@ import TryMock from "../../Data/TryMock";
 
 const SubCategory = () => {
   const { id } = useParams();
-  console.log("TryMock is......", TryMock.category);
+  console.log("route is ============>", id);
+  console.log("TryMock is......", TryMock[id]);
   // console.log('TryMock is',TryMock.category[id].cardOneHead ,TryMock.category[id].data[id])
   const { index } = useParams();
   const [mockSample, setMockSample] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [priceRange, setPriceRange] = useState("popular");
+  const categoryHeading = TryMock.category[id].cardOneHead;
   // ----------------------------------------- Function For Filter products after search
   const filteredProducts = mockSample.filter(
     ({ name, category }) =>
@@ -39,7 +41,7 @@ const SubCategory = () => {
   return (
     <>
       <h5 className="subcat-head">
-        <h2>{TryMock.category[id].cardOneHead}</h2> Collection -
+        <h2>{categoryHeading}</h2> Collection -
         {filteredProducts.length} items
       </h5>
       <div className="subcategory-main-container">
@@ -87,7 +89,7 @@ const SubCategory = () => {
                   offPrice={i.offPrice}
                 />
                 <div className="wishlist-icon">
-                <HeartComp index={index} mockSample={i} />
+                  <HeartComp index={index} mockSample={i} />
                 </div>
               </>
             ))}
@@ -106,7 +108,7 @@ const SubCategory = () => {
                   offPrice={i.offPrice}
                 />
                 <div className="wishlist-icon">
-                <HeartComp index={index} mockSample={i} />
+                  <HeartComp index={index} mockSample={i} />
                 </div>
               </div>
             ))}

@@ -18,30 +18,10 @@ import TryMock from "../../Data/TryMock";
 const ProductComponent = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log("try mock here...", TryMock.category[id].data[id]);
+  console.log("dataItem===>", TryMock);
+  console.log("dataItem===>", TryMock.category[id]);
   const { name, img, category, price, offPrice, percentOff } =
     TryMock.category[id].data[id];
-
-  const options = [
-    {
-      key: "medium",
-      text: "medium",
-      value: "medium",
-      content: "medium",
-    },
-    {
-      key: "small",
-      text: "small",
-      value: "small",
-      content: "small",
-    },
-    {
-      key: "large",
-      text: "large",
-      value: "large",
-      content: "large",
-    },
-  ];
 
   return (
     <>
@@ -75,13 +55,13 @@ const ProductComponent = () => {
 
           <div className="size-main">
             <h4>Please select a size.</h4>
-           <ul>
-            <li>XS</li>
-            <li>M</li>
-            <li>L</li>
-            <li>XL</li>
-            <li>XXL</li>
-           </ul>
+            <ul>
+              <li>XS</li>
+              <li>M</li>
+              <li>L</li>
+              <li>XL</li>
+              <li>XXL</li>
+            </ul>
           </div>
           <p>Quantity</p>
 

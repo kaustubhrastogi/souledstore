@@ -8,7 +8,8 @@ const Footer = () => {
       <div className="footer-main">
         <div className="footer-child-one">
           <h1>Our Company</h1>
-          <p>Street 2023, ABC Drive City: Seaface,
+          <p>
+            Street 2023, ABC Drive City: Seaface,
             <br />
             State Full: Maryspace,
             <br />

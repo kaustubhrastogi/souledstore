@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-  const [activeItem, setActiveItem] = useState("WOMEN");
+  const [activeItem, setActiveItem] = useState("Men");
   const [itemSearch, setItemSearch] = useState("");
   console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
@@ -17,18 +17,18 @@ const Header = () => {
         <div className="header-main-prim">
           <Menu pointing>
             <Menu.Item
-              name="WOMEN"
-              active={activeItem === "WOMEN"}
-              onClick={categoryFunc}
-              as={Link}
-              to="/Women"
-            />
-            <Menu.Item
               name="MEN"
               active={activeItem === "MEN"}
               onClick={categoryFunc}
               as={Link}
               to="/Men"
+            />
+            <Menu.Item
+              name="WOMEN"
+              active={activeItem === "WOMEN"}
+              onClick={categoryFunc}
+              as={Link}
+              to="/Women"
             />
             <Menu.Item
               name="CHILD"
@@ -48,10 +48,7 @@ const Header = () => {
 
               {/* <p href="">Contact Us</p> */}
 
-              <Menu.Item
-              name="WishListComp"
-              as={Link}
-              to="/WishListComp">
+              <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
                 <p href="">
                   <Icon name="user" circular color="black" size="large" />
                 </p>
@@ -66,7 +63,7 @@ const Header = () => {
                 />
               </Menu.Item>
               <Menu.Item as={Link} to="/cart">
-                <Icon name="in cart" size="big"  />
+                <Icon name="in cart" size="big" />
               </Menu.Item>
             </Menu.Menu>
           </Menu>

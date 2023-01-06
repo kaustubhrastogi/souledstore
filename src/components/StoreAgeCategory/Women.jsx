@@ -1,24 +1,24 @@
 import React from "react";
 import "./AgeCategory.css";
-import { Grid, Segment } from "semantic-ui-react";
-import { Link } from "react-router-dom";
-import WomenCollectionCardData from "../../Data/WomenCollectionCard";
-import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
+import { Link, useParams } from "react-router-dom";
+import WomenMenChildCollection from "../../Data/WomenMenChildCollectionCard";
 import Footer from "../Footer/Footer";
 import CarouselComp from "../CarouselComp";
 
 const Women = () => {
+  const womenCollection = WomenMenChildCollection.gender.women;
   return (
     <>
-      <CarouselComp />
+      <CarouselComp gender="women" />
       {/* ------------------------------------------------- COLLECTION CARD  */}
       <div className="collection-main-container">
         <div className="headings">
-          <h2>MEN IN STYLE</h2>
+          <h2>WOMEN IN FASHION</h2>
         </div>
         <h1>COLLECTIONS</h1>
         <div className="collection-cards">
-          {WomenCollectionCardData.map((i, index, name) => {
+          {womenCollection.map((i, index, name) => {
+            {console.log('womenCollection',womenCollection);}
             return (
               <div className="collection-card-prim">
                 <div>
@@ -36,7 +36,7 @@ const Women = () => {
       <div className="categories-main-container">
         <h1>CATEGORIES</h1>
         <div className="categories-cards">
-          {WomenCollectionCardData.map((i) => {
+          {womenCollection.map((i) => {
             return (
               <div className="categories-card-prim">
                 <div className="img-container">
