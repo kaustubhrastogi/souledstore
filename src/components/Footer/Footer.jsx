@@ -8,10 +8,14 @@ const Footer = () => {
       <div className="footer-main">
         <div className="footer-child-one">
           <h1>Our Company</h1>
-          <p>About Us</p>
-          <p>Franchise</p>
-          <p>Awards & Accolades</p>
-          <p>Our Reachs</p>
+          <p>Street 2023, ABC Drive City: Seaface,
+            <br />
+            State Full: Maryspace,
+            <br />
+            Zip Code: 404042
+            <br />
+            Phone Number: 123-456-1789
+          </p>
         </div>
         <div className="footer-child-two">
           <h1>Trending</h1>
@@ -37,6 +41,10 @@ const Footer = () => {
           <p>Awards & Accolades</p>
           <p>Our Reachs</p>
         </div>
+      </div>
+      <div>
+        <h3>Soul Fabric</h3>
+        <p></p>
       </div>
     </>
   );

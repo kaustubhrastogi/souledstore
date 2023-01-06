@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Image, Button ,Rating} from "semantic-ui-react";
+import { Card, Icon, Image, Button, Rating } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./SubCategory.css";
 
@@ -12,9 +12,6 @@ const SubCategoryCard = ({
   price,
   offPrice,
 }) => {
-  // console.log({ name });
-  // console.log('key', {index})
-
   return (
     <>
       <div className="subcategory-main-container">
@@ -25,9 +22,11 @@ const SubCategoryCard = ({
               <Card.Header>{name}</Card.Header>
               <hr />
               <Card.Meta>
-                <span className="date">{category}</span> 
+                <span>{category}</span>
                 {/* ---------------------------------------------- get ratings from mock data */}
-                <span><Rating defaultRating={3} maxRating={5} disabled /></span>
+                <span>
+                  <Rating defaultRating={3} maxRating={5} disabled />
+                </span>
               </Card.Meta>
             </Card.Content>
 

@@ -65,4 +65,13 @@
   min-height: 7vh;
   background-color: white;
   border: 1px solid rgb(73, 78, 82);
+  /* border: 1px solid rgb(73, 78, 82); */
+}
+
+.ui.menu .item>i.icon{
+  color: white;
+}
+.ui.menu .item>i.icon:hover{
+  transform: scale(1.1);
+  transition: .4s;
 }

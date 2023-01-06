@@ -66,7 +66,7 @@ const Header = () => {
                 />
               </Menu.Item>
               <Menu.Item as={Link} to="/cart">
-                <Icon name="in cart" size="big" inverted color="white" />
+                <Icon name="in cart" size="big"  />
               </Menu.Item>
             </Menu.Menu>
           </Menu>
