@@ -5,11 +5,6 @@
   grid-template-columns: auto auto auto;
   margin: 7px auto;
 }
-.subcat-head {
-  text-align: center;
-  justify-content: center;
-  margin: 0 auto;
-}
 .card-main {
   margin: 0 auto;
   width: 92%;

@@ -2,10 +2,38 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Dropdown, Grid, List, Icon } from 'semantic-ui-react'
 import Footer from '../Footer/Footer';
+import ButtonIcon from '../Header/ButtonIcon';
 import Buttoncomponent from './Buttoncomponent';
 import Faqs from './Faqs';
 import Linkcomponent from './Linkcomponent';
 import Login from './Login';
+
+const linkuri1 = [
+  {
+    uri: "https://www.instagram.com/TheSouledStore/",
+    name:'Instagram',
+    value:'instagram'
+
+  },
+  {
+    uri: "https://www.youtube.com/channel/UC1LkdB8GTrMEwFF_yzqytoA",
+    name:'Youtube',
+    value:'youtube'
+    
+  },
+  {
+    uri: "https://twitter.com/TheSouledStore",
+    name:'Twitter',
+    value:'twitter'
+ 
+  },
+  {
+    uri: "https://www.facebook.com/SouledStore",
+    name:'Facebook',
+    value:'facebook'
+    
+  },
+]
 
 const options = [
   { key: 'angular', text: 'Angularjfhjfhfhfh', value: 'angular' },
@@ -32,7 +60,7 @@ function BasicExample() {
   return (
     <>
       <div>
-        <h1 className='divspace'>Manage Order Easily</h1>
+        <h1 className='divspace' style={{margin:'40px'}}>Manage Order Easily</h1>
         <div className='btndirection' >
           <Buttoncomponent />
         </div>
@@ -61,13 +89,13 @@ function BasicExample() {
             <h1>Stay in touch</h1>
 
             <div className='linkstyle'>
-              <Linkcomponent />     
+              <ButtonIcon value ={linkuri1}/>     
             </div>
           </div>
         </div>
-        <div >
+        {/* <div >
         <Login />
-        </div>
+        </div> */}
         <div className='divspace'>
           
           <Footer />
