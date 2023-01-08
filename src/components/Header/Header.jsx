@@ -40,6 +40,7 @@ const Header = () => {
   // },[])
 
   const { wishListItem } = useSelector((state) => state.wishList.data);
+  const {cartItem}= useSelector((state)=>state.cart.data)
 
   console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
@@ -110,6 +111,9 @@ const Header = () => {
               </Menu.Item>
               <Menu.Item as={Link} to="/cart">
                 <Icon name="in cart" size="big" color="black" />
+                <Badge className="badgestyle" style={{ color: "black" }}>
+                    {Object.keys(cartItem).length}
+                </Badge>
               </Menu.Item>
             </Menu.Menu>
           </Menu>
