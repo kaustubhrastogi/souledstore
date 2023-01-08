@@ -3,17 +3,17 @@ import cardMockData from "../../Data/cardMockData";
 import "./cart.css";
 import { Button, Icon, Input } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, removeFromCart } from "../../redux/cart-reducer";
+import { decrement, increment, removeFromCart } from "../../redux/cart-reducer";
 
 const CartComponent = () => {
   // const [count,setCount]=useState(1)
-  const { cartItem, count } = useSelector((state) => state.cart.data);
+  const { cartItem } = useSelector((state) => state.cart.data);
   // const count = useSelector((state)=>state.cart.data)
   // const totalAmount= useSelector((state)=>state.cart.data)
   // console.log('totalSum=>',totalSum)
   // console.log('totalAmount=>',totalAmount)
   const dispatch = useDispatch();
-  console.log("cartItem=>", count);
+  console.log("cartItem=>", cartItem);
 
   useEffect(() => {
     SumTotal()
@@ -51,9 +51,9 @@ const CartComponent = () => {
                       <p>
                         Quantity:
                         <span>
-                          <button onClick={()=>{}}>-</button>
-                          <span>{count}</span> 
-                          <button onClick={()=>{dispatch(increment(count))}}>+</button>
+                          <button onClick={()=>{dispatch(decrement(cartItem[curr].id))}}>-</button>
+                          <span>{cartItem[curr].count}</span> 
+                          <button onClick={()=>{dispatch(increment(cartItem[curr].id))}}>+</button>
                         </span>
                       </p>
                       <button onClick={() => dispatch(removeFromCart(index))}>

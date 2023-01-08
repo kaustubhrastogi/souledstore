@@ -14,6 +14,7 @@ const TryMock = {
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 2,
@@ -25,6 +26,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
         {
           id: 3,
@@ -36,6 +38,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -47,6 +50,7 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
       ],
     },
@@ -66,6 +70,7 @@ const TryMock = {
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 2,
@@ -77,6 +82,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
         {
           id: 3,
@@ -88,6 +94,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -99,6 +106,7 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
       ],
     },
@@ -116,6 +124,7 @@ const TryMock = {
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 2,
@@ -127,6 +136,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
         {
           id: 3,
@@ -138,6 +148,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -149,6 +160,7 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
       ],
     },
@@ -168,6 +180,7 @@ const TryMock = {
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 2,
@@ -179,6 +192,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
         {
           id: 3,
@@ -190,6 +204,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -201,6 +216,7 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
       ],
     },
