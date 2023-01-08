@@ -14,14 +14,17 @@ import Footer from "../Footer/Footer";
 import { useDispatch } from "react-redux";
 import { addWish } from "../../redux/wishList-reducer";
 import TryMock from "../../Data/TryMock";
+import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
   const dispatch = useDispatch();
+  const { categoryItem } = useSelector((state) => state.category.data);
+  console.log("from redux==================>", categoryItem);
   const { id } = useParams();
   console.log("dataItem===>", TryMock);
   console.log("dataItem===>", TryMock.category[id]);
-  const { name, img, category, price, offPrice, percentOff } =
-    TryMock.category[id].data[id];
+  const { name, img, category, price, offPrice, percentOff, imgMove } =
+    TryMock.category[categoryItem].data[id];
 
   return (
     <>
@@ -33,7 +36,7 @@ const ProductComponent = () => {
               <Image src={img} />
             </Reveal.Content>
             <Reveal.Content hidden>
-              <Image src="https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1661773633_3657738.jpg?format=webp&w=576&dpr=1.0" />
+              <Image src={imgMove} />
             </Reveal.Content>
           </Reveal>
         </div>

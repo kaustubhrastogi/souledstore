@@ -17,7 +17,8 @@ const buttonuri = [
   },
   {
     uri: "https://prod-img.thesouledstore.com/public/theSoul/images/track.png?format=webp&amp;w=300&amp;dpr=1.0",
-    valuetext: 'Track'
+    valuetext: 'Track',
+    path:'/googlemap'
   },
   {
     uri: "https://prod-img.thesouledstore.com/public/theSoul/images/return.png?format=webp&amp;w=240&amp;dpr=1.0",

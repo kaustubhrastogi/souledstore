@@ -9,11 +9,14 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../../redux/cart-reducer";
 
 const SubCategory = () => {
+  
+  const NewwomenCollection = TryMock;
+  console.log('NewwomenCollection',NewwomenCollection.women)
   const { id } = useParams();
   console.log("route is ============>", id);
   console.log("TryMock is......", TryMock[id]);
   console.log("TryMock is......", TryMock.category);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // console.log('TryMock is',TryMock.category[id].cardOneHead ,TryMock.category[id].data[id])
   const { index } = useParams();
   const [mockSample, setMockSample] = useState([]);
@@ -45,8 +48,7 @@ const SubCategory = () => {
   return (
     <>
       <h5 className="subcat-head">
-        <h2>{categoryHeading}</h2> Collection -
-        {filteredProducts.length} items
+        <h2>{categoryHeading}</h2> Collection -{filteredProducts.length} items
       </h5>
       <div className="subcategory-main-container">
         {/* ------------------------------------------------ Aside div for filter options  */}
@@ -80,7 +82,7 @@ const SubCategory = () => {
 
         {/* -------------------------------------------- Getting Products before and after search  */}
         {searchText ? (
-          <div className="subcategory-main">
+          <div className="subcategory-main-filter">
             {filteredProducts.map((i, index) => (
               <>
                 <SubCategoryCard
@@ -92,8 +94,21 @@ const SubCategory = () => {
                   price={i.price}
                   offPrice={i.offPrice}
                 />
-                <div className="wishlist-icon">
-                  <HeartComp index={index} mockSample={i} />
+                <div className="wishlist-icon-filter">
+                  <HeartComp index={index} mockSample={i} id={i.id} />
+                </div>
+                <div>
+                  <Button
+                    color="facebook"
+                    style={{ width: "88%", marginLeft: 5 }}
+                    onClick={() => {
+                      dispatch(addCart(i));
+                      // dispatch(totalAmount(i.price))
+                    }}
+                  >
+                    <Icon name="add to cart-filter" />
+                    Add to Cart
+                  </Button>
                 </div>
               </>
             ))}
@@ -111,19 +126,22 @@ const SubCategory = () => {
                   price={i.price}
                   offPrice={i.offPrice}
                 />
-                
+
                 <div className="wishlist-icon">
-                <HeartComp index={index} mockSample={i} id={i.id}/>
+                  <HeartComp index={index} mockSample={i} id={i.id} />
                 </div>
                 <div>
-                <Button color="facebook" style={{width:'88%',marginLeft:5}}
-                onClick={()=>{
-                  dispatch(addCart(i))
-                  // dispatch(totalAmount(i.price))
-                  }}>
-                  <Icon name="add to cart"/>
-                  Add to Cart
-                </Button>
+                  <Button
+                    color="facebook"
+                    style={{ width: "88%", marginLeft: 5 }}
+                    onClick={() => {
+                      dispatch(addCart(i));
+                      // dispatch(totalAmount(i.price))
+                    }}
+                  >
+                    <Icon name="add to cart" />
+                    Add to Cart
+                  </Button>
                 </div>
               </div>
             ))}

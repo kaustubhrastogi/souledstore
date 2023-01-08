@@ -7,6 +7,7 @@ import CarouselComp from "../CarouselComp";
 
 const Women = () => {
   const womenCollection = WomenMenChildCollection.gender.women;
+
   return (
     <>
       <CarouselComp gender="women" />

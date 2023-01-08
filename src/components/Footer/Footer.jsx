@@ -43,10 +43,6 @@ const Footer = () => {
           <p>Our Reachs</p>
         </div>
       </div>
-      <div>
-        <h3>Soul Fabric</h3>
-        <p></p>
-      </div>
     </>
   );
 };

@@ -3,7 +3,8 @@ import { Input, Menu, Segment, Icon, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import Badge from "react-bootstrap/Badge";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { getCategory, getGender } from "../../redux/categoryReducer";
 
 const linkuri = [
   {
@@ -31,6 +32,7 @@ const Header = () => {
   const [activeItem, setActiveItem] = useState("Men");
   const [itemSearch, setItemSearch] = useState("");
   const [username, setUsername] = useState("");
+  const dispatch = useDispatch();
   // useEffect(()=>{
   //   let olddata = localStorage.getItem('datainput')
   //   let oldArr = JSON.parse(olddata)
@@ -44,6 +46,7 @@ const Header = () => {
   console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
+    dispatch(getGender(name))
   };
   console.log(activeItem);
   return (
@@ -68,6 +71,7 @@ const Header = () => {
               onClick={categoryFunc}
               as={Link}
               to="/Women"
+             
             />
             <Menu.Item
               name="CHILD"
@@ -77,27 +81,18 @@ const Header = () => {
               to="/Child"
             />
             <Menu.Menu position="right">
-              <Menu.Item
-                name="Contact Us"
-                active={activeItem === "Contactus"}
-                onClick={categoryFunc}
-                as={Link}
-                to="/Contactus"
-              />
-              <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
+              <Menu.Item name="WishListComp" as={Link} to="/Contactus">
                 <p href="">
-                  <Icon name="user" circular color="black" size="large" />
+                  <Icon name="user circle" size="big" />
                   {username}
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
-                <p href="">
-                  <Icon name="heart" circular color="black" size="large" />
+                <Icon name="heart outline" size="big" />
 
-                  <Badge className="badgestyle" style={{ color: "black" }}>
-                    {wishListItem.length}
-                  </Badge>
-                </p>
+                <Badge className="badgestyle" style={{ color: "black"}}>
+                  {wishListItem.length}
+                </Badge>
               </Menu.Item>
               <Menu.Item>
                 <Input
@@ -109,7 +104,11 @@ const Header = () => {
                 />
               </Menu.Item>
               <Menu.Item as={Link} to="/cart">
-                <Icon name="in cart" size="big" color="black" />
+                <Icon name="in cart" size="big" />
+                <Badge className="badgestyle" style={{ color: "black" }}>
+                  {/* -----------------------------------------------------need to show total cart items here */}
+                  {wishListItem.length}
+                </Badge>
               </Menu.Item>
             </Menu.Menu>
           </Menu>

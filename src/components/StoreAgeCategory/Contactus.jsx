@@ -7,6 +7,7 @@ import Buttoncomponent from './Buttoncomponent';
 import Faqs from './Faqs';
 import Linkcomponent from './Linkcomponent';
 import Login from './Login';
+import { Link } from 'react-router-dom';
 
 const linkuri1 = [
   {

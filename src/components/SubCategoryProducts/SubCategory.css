@@ -72,9 +72,26 @@
   margin-top: 13px;
 }
 
-.subcategory-main-filtered {
+/* .subcategory-main-filter {
   display: grid;
   grid-template-columns: auto auto auto;
   margin-left: 22%;
   width: 68%;
+} */
+
+.wishlist-icon {
+  width: 10%;
+  position: absolute;
+  top: 27%;
+    left: 38%;
+  z-index: 999;
+  cursor: pointer;
+}
+.wishlist-icon-fliter .wishlist-icon {
+  width: 10%;
+  position: absolute;
+  top: 28%;
+  left: 48%;
+  z-index: 999;
+  cursor: pointer;
 }

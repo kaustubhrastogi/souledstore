@@ -4,13 +4,18 @@ import { Link } from "react-router-dom";
 import WomenMenChildCollection from "../../Data/WomenMenChildCollectionCard";
 import Footer from "../Footer/Footer";
 import CarouselComp from "../CarouselComp";
+// ------------------------------------------------
+import { getCategory } from "../../redux/categoryReducer";
+import { useDispatch, useSelector } from "react-redux";
+// ------------------------------------------------
 
 const Men = () => {
+  const dispatch = useDispatch();
   console.log("=======>", WomenMenChildCollection.gender.men);
   const menCollection = WomenMenChildCollection.gender.men;
   return (
     <>
-      <CarouselComp gender='men' />
+      <CarouselComp gender="men" />
       {/* ------------------------------------------------- COLLECTION CARD  */}
       <div className="collection-main-container">
         <div className="headings">
@@ -20,9 +25,12 @@ const Men = () => {
         <div className="collection-cards">
           {menCollection.map((data, index) => {
             return (
-              <div className="collection-card-prim">
+              <div
+                onClick={() => dispatch(getCategory(index))}
+                className="collection-card-prim"
+              >
                 <div>
-                  <Link  key={index} to={`/subcategory/${index}`}>
+                  <Link key={index} to={`/subcategory/${index}`}>
                     <img src={data.img} alt="" />
                   </Link>
                   <p>{data.cardOneHead}</p>

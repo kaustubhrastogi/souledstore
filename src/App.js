@@ -13,6 +13,7 @@ import { store } from "./redux/store";
 import CartComponent from "./components/CartComponent/CartComponent";
 import Signin from "./components/StoreAgeCategory/Signin";
 import Signup from "./components/StoreAgeCategory/Signup";
+import GoogleMapContainer from "./components/MapIntegration/GoogleMapContainer";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/WishListComp" element={<WishListComp />} />
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Signup" element={<Signup/>} />
+        <Route path="/googlemap" element={<GoogleMapContainer/>} />
 
       </Routes>
       </Provider>
