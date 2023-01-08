@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { data: { cartItem: {}, totalSum:0 } }
+const initialState = { data: { cartItem: {}, count:1 } }
 
 // cartItem: {
 //    1:{item: {id: 1, name:'Smart Tv', price:'200$'}, count:5}
@@ -55,15 +55,12 @@ const cartSlice = createSlice({
         },
         removeAll: () => { },
         // inrement and decrement reducer
-        // totalAmount: (state,action) => {
-        //    let count = 0
-        //    count+= action.payload
-        // console.log('sumArr=>',count)
-        //     state.data={totalSum:count}
-        // }
+        increment: (state,action) => {
+            state.data.count=action.payload + 1
+        }
     }
 })
 
-export const { addCart, removeFromCart } = cartSlice.actions
+export const { addCart, removeFromCart,increment } = cartSlice.actions
 
 export default cartSlice

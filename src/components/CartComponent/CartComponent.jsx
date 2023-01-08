@@ -1,20 +1,32 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import cardMockData from "../../Data/cardMockData";
 import "./cart.css";
 import { Button, Icon, Input } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../redux/cart-reducer";
+import { increment, removeFromCart } from "../../redux/cart-reducer";
 
 const CartComponent = () => {
-  const { cartItem } = useSelector((state) => state.cart.data);
+  // const [count,setCount]=useState(1)
+  const { cartItem, count } = useSelector((state) => state.cart.data);
+  // const count = useSelector((state)=>state.cart.data)
   // const totalAmount= useSelector((state)=>state.cart.data)
   // console.log('totalSum=>',totalSum)
   // console.log('totalAmount=>',totalAmount)
   const dispatch = useDispatch();
-  console.log("cartItem=>", cartItem);
-  const addCart = () => {
-    console.log("buy it");
+  console.log("cartItem=>", count);
+
+  useEffect(() => {
+    SumTotal()
+  }, [cartItem])
+  
+  const SumTotal = () => {
+    let sum = 0
+    Object.keys(cartItem).map((c)=>{
+      sum = cartItem[c].price + sum
+    })
+    return sum
   };
+  
   // console.log("cardmock in cart", cardMockData[0].name);
   return (
     <>
@@ -39,8 +51,9 @@ const CartComponent = () => {
                       <p>
                         Quantity:
                         <span>
-                          <button>-</button>
-                          <span>0</span> <button>+</button>
+                          <button onClick={()=>{}}>-</button>
+                          <span>{count}</span> 
+                          <button onClick={()=>{dispatch(increment(count))}}>+</button>
                         </span>
                       </p>
                       <button onClick={() => dispatch(removeFromCart(index))}>
@@ -57,9 +70,9 @@ const CartComponent = () => {
           )}
         </div>
         <div>
-          {Object.keys(cartItem).length > 0 && (
+          { (
             <div className="cart-product-order">
-              <Button color="primary" animated="vertical" onClick={addCart()}>
+              <Button color="primary" animated="vertical" >
                 <Button.Content hidden>
                   ADD TO CART <Icon name="cart plus" size="large" />
                 </Button.Content>
@@ -85,7 +98,7 @@ const CartComponent = () => {
                 <p>Discount</p>
                 <p>GST</p>
                 <p>Total Amount</p>
-                <p>{}</p>
+                <p>{SumTotal()}</p>
                 <p>Cart Total</p>
               </div>
             </div>
