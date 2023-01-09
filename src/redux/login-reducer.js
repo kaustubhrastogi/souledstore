@@ -8,6 +8,9 @@ const loginSlice = createSlice({
         login : (state,action) => {
             state.data={loginData:{ ...action.payload}}
         },
+        // logout:(state,action)=>{
+        //     state.data={loginData:{}}
+        // }
         
     }
 })
