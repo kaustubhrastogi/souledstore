@@ -5,6 +5,7 @@ import "./Header.css";
 import Badge from "react-bootstrap/Badge";
 import { useSelector,useDispatch } from "react-redux";
 import { getCategory, getGender } from "../../redux/categoryReducer";
+import SearchComponent from "../SearchComponent/SearchComponent";
 
 const linkuri = [
   {
@@ -95,15 +96,9 @@ const Header = () => {
                   {wishListItem.length}
                 </Badge>
               </Menu.Item>
-              <Menu.Item>
-                <Input
-                  icon="search"
-                  placeholder="Search..."
-                  onChange={(e) => {
-                    setItemSearch(e.target.value);
-                  }}
-                />
-              </Menu.Item>
+              <>
+              <p className="search-comp"><SearchComponent /></p>
+              </>
               <Menu.Item as={Link} to="/cart">
                 <Icon name="in cart" size="big"  />
                 <Badge bg="white" className="badgestyle" style={{ color: "black" }}>

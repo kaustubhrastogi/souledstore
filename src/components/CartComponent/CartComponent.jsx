@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import cardMockData from "../../Data/cardMockData";
 import "./cart.css";
 import { Button, Icon, Input } from "semantic-ui-react";
@@ -16,17 +16,17 @@ const CartComponent = () => {
   console.log("cartItem=>", cartItem);
 
   useEffect(() => {
-    SumTotal()
-  }, [cartItem])
-  
+    SumTotal();
+  }, [cartItem]);
+
   const SumTotal = () => {
-    let sum = 0
-    Object.keys(cartItem).map((c)=>{
-      sum = cartItem[c].price + sum
-    })
-    return sum
+    let sum = 0;
+    Object.keys(cartItem).map((c) => {
+      sum = cartItem[c].price + sum;
+    });
+    return sum;
   };
-  
+
   // console.log("cardmock in cart", cardMockData[0].name);
   return (
     <>
@@ -70,14 +70,14 @@ const CartComponent = () => {
           )}
         </div>
         <div>
-          { (
+          {
             <div className="cart-product-order">
-              <Button color="primary" animated="vertical" >
+              <Button positive animated="vertical">
                 <Button.Content hidden>
-                  ADD TO CART <Icon name="cart plus" size="large" />
+                  PLACE ORDER <Icon name="cart plus" size="large" />
                 </Button.Content>
                 <Button.Content c visible>
-                  ADD TO CART
+                  PLACE ORDER
                 </Button.Content>
               </Button>
               <Input
@@ -91,18 +91,26 @@ const CartComponent = () => {
                   console.log(e.target.value);
                 }}
               />
+              <div>
+              <h6 style={{marginTop:'24px', marginBottom:'0'}}>BILLING DETAILS</h6>
               <div className="billing-details">
-                <h6>BILLING DETAILS</h6>
+                <div>
                 <p>Cart Total</p>
                 <p>{Object.keys(cartItem).length}</p>
-                <p>Discount</p>
-                <p>GST</p>
+                </div>
+                {/* <p>Discount</p> */}
+                <div>
+                <p>GST 18%</p>
+                </div>
+                <div>
                 <p>Total Amount</p>
                 <p>{SumTotal()}</p>
+                </div>
                 <p>Cart Total</p>
               </div>
+              </div>
             </div>
-          )}
+          }
         </div>
       </div>
     </>

@@ -71,3 +71,21 @@
 i.big.icon {
   color: white;
 }
+
+.search-comp {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  right: 210px;
+  color: black;
+  text-align: center;
+}
+.ui.three.cards {
+  text-align: center;
+}
+.ui.card .content{
+  text-align: center;
+}
+.search-card{
+  text-align: center;
+}

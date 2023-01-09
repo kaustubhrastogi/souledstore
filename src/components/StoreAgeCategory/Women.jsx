@@ -22,7 +22,7 @@ const Women = () => {
             {console.log('womenCollection',womenCollection);}
             return (
               <div className="collection-card-prim">
-                <div>
+                <div className="collection-card-prim-women">
                   <Link to={`/subcategory/${index}`}>
                     <img key="{item}" src={i.img} alt="" />
                   </Link>

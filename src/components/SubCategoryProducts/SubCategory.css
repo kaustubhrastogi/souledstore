@@ -95,3 +95,7 @@
   z-index: 999;
   cursor: pointer;
 }
+
+.subcategory-main .card{
+  width: 288px;
+}

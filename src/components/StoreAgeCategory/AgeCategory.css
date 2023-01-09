@@ -46,6 +46,13 @@
   margin: -13px auto;
 }
 
+.collection-cards div:nth-child(2) img {
+  width: 78%;
+}
+.collection-card-prim:nth-child(2) .collection-card-prim-women{
+  width: 58%;
+  margin-left: 98px;
+}
 .collection-card-prim div img {
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   width: 62%;

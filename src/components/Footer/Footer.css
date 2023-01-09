@@ -7,7 +7,7 @@
 }
 .footer-child-one,.footer-child-two,.footer-child-three,.footer-child-four{
     width: 28%;
-    margin: 14px;
+    margin: 25px;
     margin-top: 32px;
     /* border: 2px solid rgb(71, 67, 68); */
 }
@@ -24,8 +24,9 @@
     
 }
 .footer-main p{
-    color: rgba(228, 228, 227, 0.747);
+    color: rgba(228, 228, 227, 0.815);
     cursor: pointer;
+    font-size: 14.5px;
 }
 .footer-main p:hover{
     color: yellow;
@@ -33,6 +34,12 @@
 }
 .footer-child-one p{
     text-align: left;
-    margin: 4px 67px;
+    margin: 4px 99px;
     width: 100%;
+}
+.style__copyright{
+    background-color: rgb(173, 24, 24);
+    color: white;
+    padding: 7px;
+    margin-bottom: 19px;
 }

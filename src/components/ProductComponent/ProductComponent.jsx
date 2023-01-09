@@ -37,7 +37,7 @@ const ProductComponent = () => {
       <h2>Your's Product</h2>
       <div className="product-component-main">
         <div className="product-profile">
-          <Reveal animated="move">
+          <Reveal animated='move right'>
             <Reveal.Content visible>
               <Image src={img} />
             </Reveal.Content>
@@ -72,7 +72,7 @@ const ProductComponent = () => {
               <li>XXL</li>
             </ul>
           </div>
-          <p>Quantity</p>
+          {/* <p>Quantity</p> */}
 
           <div>
             <Button positive onClick={()=>{dispatch(addCart(TryMock.category[categoryItem].data[id]))}}>

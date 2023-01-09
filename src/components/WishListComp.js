@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { addCart } from '../redux/cart-reducer'
 import { removeWishListItem } from '../redux/wishList-reducer'
 import SubCategoryCard from './SubCategoryProducts/SubCategoryCard'
 
@@ -10,7 +11,7 @@ export const WishListComp = () => {
   return (
     <div className="subcategory-main">
           {wishListItem && wishListItem.length>0 ? wishListItem.map((i, index) => (
-            <div><SubCategoryCard
+            <div style={{width:'58%', margin:'9px'}}><SubCategoryCard
               index={index}
               id={i.id}
               img={i.img}
@@ -19,6 +20,7 @@ export const WishListComp = () => {
               price={i.price}
               offPrice={i.offPrice}
             />
+            <button onClick={()=>dispatch(addCart(i))}>Move to Cart</button>
             <button onClick={()=>dispatch(removeWishListItem(i.id))}>remove</button>
             </div>
           )):
