@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Input, Menu, Segment, Icon, Dropdown } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import Badge from "react-bootstrap/Badge";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getCategory, getGender } from "../../redux/categoryReducer";
 import SearchComponent from "../SearchComponent/SearchComponent";
 
@@ -30,21 +30,17 @@ const linkuri = [
   },
 ];
 const Header = () => {
+  const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState("Men");
   const [itemSearch, setItemSearch] = useState("");
   const [username, setUsername] = useState("");
   const dispatch = useDispatch();
-  // useEffect(()=>{
-  //   let olddata = localStorage.getItem('datainput')
-  //   let oldArr = JSON.parse(olddata)
-  //   const user=oldArr
-  //   setUsername(user.email)
-  //  console.log(username)
-  // },[])
-
   const { wishListItem } = useSelector((state) => state.wishList.data);
-  const {cartItem}= useSelector((state)=>state.cart.data)
-
+  const { cartItem } = useSelector((state) => state.cart.data)
+  const userdata = useSelector((state) => state.login.data)
+  // let userdetails = JSON.parse(userdata)
+  console.log("userdata====>",(userdata.loginData.name))
+  // console.log("name====>",userdata.loginData.name)
   console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
@@ -73,7 +69,7 @@ const Header = () => {
               onClick={categoryFunc}
               as={Link}
               to="/Women"
-             
+
             />
             <Menu.Item
               name="CHILD"
@@ -86,7 +82,7 @@ const Header = () => {
               <Menu.Item name="WishListComp" as={Link} to="/Contactus">
                 <p href="">
                   <Icon name="user circle" size="big" />
-                  {username}
+                <p>{userdata.loginData.name}</p>
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
