@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductComponent.css";
 import { useParams } from "react-router-dom";
 import {
@@ -18,26 +18,23 @@ import { useSelector } from "react-redux";
 import { addCart } from "../../redux/cart-reducer";
 
 const ProductComponent = () => {
+  const [ btn, setBtn]= useState(true)
   const dispatch = useDispatch();
   const { categoryItem } = useSelector((state) => state.category.data);
   const {wishListItem} = useSelector((state)=>state.wishList.data)
   console.log("from redux==================>", categoryItem);
   const { id } = useParams();
-  console.log("dataItem===>", TryMock);
-  console.log("dataItem===>", TryMock.category[id]);
+  // console.log("dataItem===>", TryMock);
+  // console.log("dataItem===>", TryMock.category[id]);
   const { name, img, category, price, offPrice, percentOff, imgMove } =
     TryMock.category[categoryItem].data[id];
-
-    const AddWishFn = () => (
-      dispatch(addWish(TryMock.category[categoryItem].data[id]))
-    )
 
   return (
     <>
       <h2>Your's Product</h2>
       <div className="product-component-main">
         <div className="product-profile">
-          <Reveal animated='move right'>
+          <Reveal animated="move">
             <Reveal.Content visible>
               <Image src={img} />
             </Reveal.Content>
@@ -72,16 +69,32 @@ const ProductComponent = () => {
               <li>XXL</li>
             </ul>
           </div>
-          {/* <p>Quantity</p> */}
+          <p>Quantity</p>
 
           <div>
-            <Button positive onClick={()=>{dispatch(addCart(TryMock.category[categoryItem].data[id]))}}>
+            {!btn ? <Button positive onClick={()=>{dispatch(addCart(TryMock.category[categoryItem].data[id]))}}>
               <Icon name="add to cart" /> ADD TO CART
-            </Button>
-            <Button basic color="red" onClick={()=>{ AddWishFn() }} >
+            </Button>:
+             <Button basic color="red" onClick={()=>{
+              dispatch(addWish(TryMock.category[categoryItem].data[id]))
+              if(wishListItem.length>0){
+                let newData = wishListItem.filter((c)=>{
+                  if(c.id===TryMock.category[categoryItem].data[id].id){
+                    return true
+                  }else{
+                    return false
+                  }
+                  
+                  })
+                console.log('newData=>',newData)
+                if(newData.length==1){
+                  setBtn(false)
+                }
+              }
+              }} >
               <Icon name="heart" />
               ADD TO WISHLIST
-            </Button>
+            </Button>}
           </div>
           <hr />
           {/* ------------------------------------------------ ADD Dropdown here for product details/ description  */}
