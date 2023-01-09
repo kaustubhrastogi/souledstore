@@ -5,13 +5,12 @@ import { Button, Icon, Input } from "semantic-ui-react";
 import { HeartComp } from "./HeartComp";
 import { useParams } from "react-router-dom";
 import TryMock from "../../Data/TryMock";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cart-reducer";
 
 const SubCategory = () => {
-  
   const NewwomenCollection = TryMock;
-  console.log('NewwomenCollection',NewwomenCollection.women)
+  console.log("NewwomenCollection", NewwomenCollection.women);
   const { id } = useParams();
   console.log("route is ============>", id);
   console.log("TryMock is......", TryMock[id]);

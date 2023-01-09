@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { Icon } from "semantic-ui-react";
+import { Icon, Divider, Image } from "semantic-ui-react";
 
 const Footer = () => {
   return (
@@ -25,13 +25,13 @@ const Footer = () => {
           <p>Awards & Accolades</p>
           <p>Our Reachs</p>
         </div>
-        <div className="footer-child-three">
+        {/* <div className="footer-child-three">
           <h1>Quick Links</h1>
           <p>About Us</p>
           <p>Franchise</p>
           <p>Awards & Accolades</p>
           <p>Our Reachs</p>
-        </div>
+        </div> */}
         <div className="footer-child-four">
           <h1>Get In Touch</h1>
           <p>
@@ -39,9 +39,11 @@ const Footer = () => {
             <Icon name="facebook f" color="blue" size="big" />
             <Icon name="mail" color="yellow" size="big" />
           </p>
-          <p>Awards & Accolades</p>
-          <p>Our Reachs</p>
         </div>
+      </div>
+      <div className="style__copyright" >
+        <hr />
+        <p style={{margin:'13px'}}>© 2023 <strong>Soul Fabric</strong> . All rights reserved.</p>
       </div>
     </>
   );

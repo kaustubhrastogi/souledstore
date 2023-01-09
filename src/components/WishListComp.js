@@ -10,7 +10,7 @@ export const WishListComp = () => {
   return (
     <div className="subcategory-main">
           {wishListItem && wishListItem.length>0 ? wishListItem.map((i, index) => (
-            <div><SubCategoryCard
+            <div style={{width:'58%', margin:'9px'}}><SubCategoryCard
               index={index}
               id={i.id}
               img={i.img}
@@ -19,7 +19,7 @@ export const WishListComp = () => {
               price={i.price}
               offPrice={i.offPrice}
             />
-            <button onClick={()=>dispatch(removeWishListItem(i.id))}>remove</button>
+            <button   onClick={()=>dispatch(removeWishListItem(i.id))}>remove</button>
             </div>
           )):
           <h1>Wish List is Empty</h1>}

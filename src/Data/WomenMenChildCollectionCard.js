@@ -10,7 +10,7 @@ const WomenMenChildCollection = {
       {
         id: 2,
         cardOneHead: "HOODIES & JACKETS",
-        img: "https://images.pexels.com/photos/9704405/pexels-photo-9704405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        img: "https://images.pexels.com/photos/7636945/pexels-photo-7636945.jpeg?auto=compress&cs=tinysrgb&w=400",
         img2: "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/WebsiteTiles_sweatshirts--sweaters_3.jpg?format=webp&w=480&dpr=1.0",
       },
       {
@@ -30,7 +30,7 @@ const WomenMenChildCollection = {
       {
         id: 2,
         cardOneHead: "HOODIES & JACKETS",
-        img: "https://images.pexels.com/photos/7945744/pexels-photo-7945744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        img: "https://images.pexels.com/photos/7945745/pexels-photo-7945745.jpeg?auto=compress&cs=tinysrgb&w=600",
         img2: "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/WebsiteTiles_Big_Tushar_Women-version_2.jpg?format=webp&w=480&dpr=1.0",
       },
       {

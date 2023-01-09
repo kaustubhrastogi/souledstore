@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@200&display=swap");
+/* font-family: 'Sofia Sans Semi Condensed', sans-serif; */
+.ui.three.cards {
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.search-card .ui .card {
+  text-align: center;
+}
+.ui .card .content:hover {
+  cursor: pointer;
+  color: rgb(137, 206, 9);
+}
+
+.search-card p {
+  font-family: "Sofia Sans Semi Condensed", sans-serif;
+  font-weight: 600;
+}
+/* .ui.three.cards .search-card{
+    z-index: 999;
+} */
