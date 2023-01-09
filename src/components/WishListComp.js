@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { addCart } from '../redux/cart-reducer'
 import { removeWishListItem } from '../redux/wishList-reducer'
 import SubCategoryCard from './SubCategoryProducts/SubCategoryCard'
 
@@ -19,7 +20,8 @@ export const WishListComp = () => {
               price={i.price}
               offPrice={i.offPrice}
             />
-            <button   onClick={()=>dispatch(removeWishListItem(i.id))}>remove</button>
+            <button onClick={()=>dispatch(addCart(i))}>Move to Cart</button>
+            <button onClick={()=>dispatch(removeWishListItem(i.id))}>remove</button>
             </div>
           )):
           <h1>Wish List is Empty</h1>}

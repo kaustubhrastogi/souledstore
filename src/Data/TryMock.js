@@ -14,6 +14,7 @@ const TryMock = {
           price: 949,
           offPrice: 699,
           percentOff: "43%",
+          count:1
         },
         {
           id: 2,
@@ -25,6 +26,7 @@ const TryMock = {
           price: 949,
           offPrice: 699,
           percentOff: "43%",
+          count:1
         },
 
         {
@@ -37,6 +39,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -48,6 +51,7 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
         {
           id: 5,
@@ -59,6 +63,7 @@ const TryMock = {
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 6,
@@ -70,6 +75,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
       ],
     },
@@ -87,6 +93,7 @@ const TryMock = {
           price: 849,
           offPrice: 699,
           percentOff: "43%",
+          count:1
         },
         {
           id: 2,
@@ -98,6 +105,7 @@ const TryMock = {
           price: 1249,
           offPrice: 1199,
           percentOff: "43%",
+          count:1
         },
 
         {
@@ -110,6 +118,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -121,19 +130,21 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
         {
           id: 5,
           name: "Looney Toons: Bugs Special",
           img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670086607_7310087.jpg?format=webp&w=240&dpr=1.0",
-          imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1661773633_3657738.jpg?format=webp&w=576&dpr=1.0",
+          // imgMove:
+          //   "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1661773633_3657738.jpg?format=webp&w=576&dpr=1.0",
           category: "hoodies",
           imgMove:
             "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670086620_5318985.jpg?format=webp&w=360&dpr=1.0",
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 6,
@@ -145,6 +156,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
       ],
     },
@@ -162,6 +174,7 @@ const TryMock = {
           price: 849,
           offPrice: 699,
           percentOff: "33%",
+          count:1
         },
         {
           id: 2,
@@ -173,6 +186,7 @@ const TryMock = {
           price: 749,
           offPrice: 679,
           percentOff: "23%",
+          count:1
         },
 
         {
@@ -185,6 +199,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -196,6 +211,7 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
         {
           id: 5,
@@ -207,6 +223,7 @@ const TryMock = {
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 6,
@@ -218,6 +235,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
       ],
     },
@@ -237,6 +255,7 @@ const TryMock = {
           price: 699,
           offPrice: 399,
           percentOff: "43%",
+          count:1
         },
         {
           id: 2,
@@ -248,6 +267,7 @@ const TryMock = {
           price: 889,
           offPrice: 649,
           percentOff: "43%",
+          count:1
         },
         {
           id: 3,
@@ -259,6 +279,7 @@ const TryMock = {
           price: 599,
           offPrice: 359,
           percentOff: "34%",
+          count:1
         },
         {
           id: 4,
@@ -270,6 +291,7 @@ const TryMock = {
           price: 749,
           offPrice: 599,
           percentOff: "43%",
+          count:1
         },
       ],
     },

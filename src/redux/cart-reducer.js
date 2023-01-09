@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { data: { cartItem: {}, count:1 } }
+const initialState = { data: { cartItem: {} } }
 
 // cartItem: {
 //    1:{item: {id: 1, name:'Smart Tv', price:'200$'}, count:5}
@@ -21,46 +21,76 @@ const cartSlice = createSlice({
     reducers: {
         addCart: (state, action) => {
             //  state.data = {cartItem: [...state.data.cartItem, action.payload] }
-            state.data={cartItem:{...state.data.cartItem, [action.payload.id]:action.payload}}
-            console.log('reducer==>',state.data)
+            state.data = { cartItem: { ...state.data.cartItem, [action.payload.id]: action.payload } }
+            console.log('reducer==>', state.data)
         },
-        // addCart: (state, action) => {
-        //     if (Object.keys(state.data.cartItem).length === 0) {
-        //         state.data = {
-        //             cartItem: { [action.payload.id]: { ...action.payload } },
-        //         };
-        //     } else if (state.data.cartItem.hasOwnProperty(action.payload.id)) {
-        //         let count1 = state.data.cartItem[action.payload.id].count + 1;
-        //         state.data = {
-        //             cartItem: {
-        //                 ...state.data.cartItem,
-        //                 [action.payload.id]: {
-        //                     ...state.data.cartItem[action.payload.id],
-        //                     count: count1,
-        //                 },
-        //             },
-        //         };
-        //     } else {
-        //         state.data = {
-        //             cartItem: {
-        //                 ...state.data.cartItem,
-        //                 [action.payload.id]: { ...action.payload },
-        //             },
-        //         };
-        //     }
-        // },
+        addCart: (state, action) => {
+            if (Object.keys(state.data.cartItem).length === 0) {
+                state.data = {
+                    cartItem: { [action.payload.id]: { ...action.payload } },
+                };
+            } else if (state.data.cartItem.hasOwnProperty(action.payload.id)) {
+                let count1 = state.data.cartItem[action.payload.id].count + 1;
+                state.data = {
+                    cartItem: {
+                        ...state.data.cartItem,
+                        [action.payload.id]: {
+                            ...state.data.cartItem[action.payload.id],
+                            count: count1,
+                        },
+                    },
+                };
+            } else {
+                state.data = {
+                    cartItem: {
+                        ...state.data.cartItem,
+                        [action.payload.id]: { ...action.payload },
+                    },
+                };
+            }
+        },
         removeFromCart: (state, action) => {
             const newArray = Object.values(state.data.cartItem).filter((item, index) => index !== action.payload)
             state.data = { cartItem: newArray }
         },
         removeAll: () => { },
         // inrement and decrement reducer
-        increment: (state,action) => {
-            state.data.count=action.payload + 1
+        increment: (state, action) => {
+            if (state.data.cartItem.hasOwnProperty(action.payload)) {
+                let count1 = state.data.cartItem[action.payload].count + 1;
+                state.data = {
+                    cartItem: {
+                        ...state.data.cartItem,
+                        [action.payload]: {
+                            ...state.data.cartItem[action.payload],
+                            count: count1,
+                        },
+                    },
+                };
+            }else{
+                console.log('cannot increase',action.payload)
+                console.log('item:',state.data.cartItem);
+            }
+        },
+        decrement: (state, action) => {
+            if (state.data.cartItem.hasOwnProperty(action.payload)&& state.data.cartItem[action.payload].count >1) {
+                let count1 = state.data.cartItem[action.payload].count - 1;
+                state.data = {
+                    cartItem: {
+                        ...state.data.cartItem,
+                        [action.payload]: {
+                            ...state.data.cartItem[action.payload],
+                            count: count1,
+                        },
+                    },
+                };
+            }else{
+                console.log('cannot dec',action.payload)
+            }
         }
     }
 })
 
-export const { addCart, removeFromCart,increment } = cartSlice.actions
+export const { addCart, removeFromCart, increment, decrement } = cartSlice.actions
 
 export default cartSlice
