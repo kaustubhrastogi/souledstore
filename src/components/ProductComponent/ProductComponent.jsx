@@ -15,16 +15,22 @@ import { useDispatch } from "react-redux";
 import { addWish } from "../../redux/wishList-reducer";
 import TryMock from "../../Data/TryMock";
 import { useSelector } from "react-redux";
+import { addCart } from "../../redux/cart-reducer";
 
 const ProductComponent = () => {
   const dispatch = useDispatch();
   const { categoryItem } = useSelector((state) => state.category.data);
+  const {wishListItem} = useSelector((state)=>state.wishList.data)
   console.log("from redux==================>", categoryItem);
   const { id } = useParams();
   console.log("dataItem===>", TryMock);
   console.log("dataItem===>", TryMock.category[id]);
   const { name, img, category, price, offPrice, percentOff, imgMove } =
     TryMock.category[categoryItem].data[id];
+
+    const AddWishFn = () => (
+      dispatch(addWish(TryMock.category[categoryItem].data[id]))
+    )
 
   return (
     <>
@@ -69,10 +75,10 @@ const ProductComponent = () => {
           <p>Quantity</p>
 
           <div>
-            <Button positive>
+            <Button positive onClick={()=>{dispatch(addCart(TryMock.category[categoryItem].data[id]))}}>
               <Icon name="add to cart" /> ADD TO CART
             </Button>
-            <Button basic color="red">
+            <Button basic color="red" onClick={()=>{ AddWishFn() }} >
               <Icon name="heart" />
               ADD TO WISHLIST
             </Button>

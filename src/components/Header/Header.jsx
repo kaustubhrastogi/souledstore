@@ -91,7 +91,7 @@ const Header = () => {
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
                 <Icon name="heart outline" size="big" />
 
-                <Badge className="badgestyle" style={{ color: "black"}}>
+                <Badge bg="white" className="badgestyle" style={{ color: "black"}}>
                   {wishListItem.length}
                 </Badge>
               </Menu.Item>
@@ -105,8 +105,8 @@ const Header = () => {
                 />
               </Menu.Item>
               <Menu.Item as={Link} to="/cart">
-                <Icon name="in cart" size="big" color="black" />
-                <Badge className="badgestyle" style={{ color: "black" }}>
+                <Icon name="in cart" size="big"  />
+                <Badge bg="white" className="badgestyle" style={{ color: "black" }}>
                     {Object.keys(cartItem).length}
                 </Badge>
               </Menu.Item>
