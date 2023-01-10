@@ -8,13 +8,14 @@ const loginSlice = createSlice({
         login : (state,action) => {
             state.data={loginData:{ ...action.payload}}
         },
-        // logout:(state,action)=>{
-        //     state.data={loginData:{}}
-        // }
+        logout : (state,action) =>{
+           
+            state.data={loginData:[initialState, action.payload]}
+        }
         
     }
 })
 
 export default loginSlice
 
-export const {login} = loginSlice.actions
+export const {login,logout} = loginSlice.actions

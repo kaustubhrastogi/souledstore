@@ -6,6 +6,7 @@ import Badge from "react-bootstrap/Badge";
 import { useSelector, useDispatch } from "react-redux";
 import { getCategory, getGender } from "../../redux/categoryReducer";
 import SearchComponent from "../SearchComponent/SearchComponent";
+import { logout } from "../../redux/login-reducer";
 
 const linkuri = [
   {
@@ -83,6 +84,7 @@ const Header = () => {
                 <p href="">
                   <Icon name="user circle" size="big" />
                 <p>{userdata.loginData.name}</p>
+                <button onClick={()=>dispatch(logout())}>logout</button>
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
