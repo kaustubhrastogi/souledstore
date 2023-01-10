@@ -8,6 +8,7 @@ import { getCategory } from "../../redux/categoryReducer";
 import SearchComponent from "../SearchComponent/SearchComponent";
 import TryMock from "../../Data/TryMock";
 import { getGender } from "../../redux/genderDataReducer";
+import { logout } from "../../redux/login-reducer";
 
 const linkuri = [
   {
@@ -93,7 +94,8 @@ const Header = () => {
               <Menu.Item name="WishListComp" as={Link} to="/Contactus">
                 <p href="">
                   <Icon name="user circle" size="big" />
-                  <p>{userdata.loginData.name}</p>
+                <p>{userdata.loginData.name}</p>
+                <button onClick={()=>dispatch(logout())}>logout</button>
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
