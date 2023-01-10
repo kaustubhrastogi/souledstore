@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
 /* font-family: 'Macondo', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SignWriting&display=swap");
+/* font-family: 'Noto Sans SignWriting', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+/* font-family: 'Raleway', sans-serif; */
 
 .ui.menu > .item:first-child {
   border-radius: 0.28571429rem 0 0 0.28571429rem;
@@ -8,18 +12,28 @@
 }
 
 .header-main .logo-head {
-  width: 10%;
+  padding: 8px;
+  width: 100%;
   font-family: "Macondo", cursive;
   font-size: 2.3em;
-  margin: 13px;
+  /* margin: 13px; */
+  margin-left: 0;
   font-weight: 900;
   background-image: linear-gradient(rgb(240, 224, 2), rgb(235, 213, 16));
+  color: white;
   background-size: 100% 6px;
   background-repeat: no-repeat;
-  background-position: 100% 0%;
+  background-position: 60% 0%;
   transition: background-size 0.7s, background-position 0.5s ease-in-out;
 }
-
+.ui.menu > .item:first-child {
+  margin-left: 28px;
+}
+.ui.menu:not(.vertical) .item {
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  padding-left: 33px;
+}
 .header-main .logo-head:hover {
   background-size: 100% 100%;
   background-position: 0% 100%;
@@ -35,7 +49,9 @@
   border-radius: 0;
   color: white;
 }
-
+.ui.menu:not(.vertical) .item:hover{
+  /* background-color: rgba(236, 236, 236, 0.644); */
+color: white;}
 .header-main .ui.menu .active {
   background: white !important;
 }
@@ -44,8 +60,8 @@
 }
 .ui.menu .active.item {
   font-family: "Playfair Display", serif;
+  
 }
-
 /* .header-options {
   min-height: 7vh;
   background-color: white;
@@ -77,17 +93,17 @@ i.big.icon {
   z-index: 999;
   position: absolute;
   top: 0;
-  right: 210px;
+  right: 410px;
   color: black;
   text-align: center;
-  margin: 0 ;
+  margin-top: 6px;
 }
 .ui.three.cards {
   text-align: center;
 }
-.ui.card .content{
+.ui.card .content {
   text-align: center;
 }
-.search-card{
+.search-card {
   text-align: center;
 }
