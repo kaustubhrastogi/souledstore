@@ -6,7 +6,7 @@ const wishListSlice = createSlice({
     initialState,
     reducers:{
         addWish : (state,action) => {
-            console.log(action.payload,'hjdvh')
+            // console.log(action.payload,'hjdvh')
             if(state.data.wishListItem.length===0){
             state.data={wishListItem:[{...action.payload}]}
             } else{
