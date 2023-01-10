@@ -37,7 +37,10 @@ const CartComponent = () => {
               <div className="cart-product-main">
                 <div className="cart-product-main-img">
                   <img src={cartItem[curr].img} alt="" />
-                  <div style={{textAlign:'left', marginLeft:'39px'}} className="cart-product-main-product-desc">
+                  <div
+                    style={{ textAlign: "left", marginLeft: "39px" }}
+                    className="cart-product-main-product-desc"
+                  >
                     <div className="cart-product-main-product-desc-sec">
                       <h3>{cartItem[curr].name}</h3>
                       <h3>{cartItem[curr].category}</h3>
@@ -51,13 +54,31 @@ const CartComponent = () => {
                       <p>
                         <b>Quantity:</b>
                         <span>
-                          <Button size="mini"  onClick={()=>{dispatch(decrement(cartItem[curr].id))}}> <Icon name="minus" /> </Button>
+                          <Button
+                            size="mini"
+                            onClick={() => {
+                              dispatch(decrement(cartItem[curr].id));
+                            }}
+                          >
+                            {" "}
+                            <Icon name="minus" />{" "}
+                          </Button>
                           <span>{cartItem[curr].count}</span>
-                          <Button size="mini" onClick={()=>{dispatch(increment(cartItem[curr].id))}}><Icon name="plus" /></Button>
+                          <Button
+                            size="mini"
+                            onClick={() => {
+                              dispatch(increment(cartItem[curr].id));
+                            }}
+                          >
+                            <Icon name="plus" />
+                          </Button>
                         </span>
                       </p>
-                      <Button color="black" onClick={() => dispatch(removeFromCart(index))}>
-                         <Icon name="trash alternate" /> Remove
+                      <Button
+                        color="black"
+                        onClick={() => dispatch(removeFromCart(index))}
+                      >
+                        <Icon name="trash alternate" /> Remove
                       </Button>
                     </div>
                   </div>
@@ -70,7 +91,7 @@ const CartComponent = () => {
           )}
         </div>
         <div>
-          {
+          {cartItem && Object.keys(cartItem).length > 0 ? (
             <div className="cart-product-order">
               <Button positive animated="vertical">
                 <Button.Content hidden>
@@ -92,25 +113,33 @@ const CartComponent = () => {
                 }}
               />
               <div>
-              <h6 style={{marginTop:'24px', marginBottom:'0'}}>BILLING DETAILS</h6>
-              <div className="billing-details">
-                <div>
-                <p>Cart Total</p>
-                <p>{Object.keys(cartItem).length}</p>
+                <h6 style={{ marginTop: "24px", marginBottom: "0" }}>
+                  BILLING DETAILS
+                </h6>
+                <div className="billing-details">
+                  <div>
+                    <p>Cart Total</p>
+                    <p>{Object.keys(cartItem).length}</p>
+                  </div>
+                  {/* <p>Discount</p> */}
+                  <div>
+                    <p>GST 18%</p>
+                  </div>
+                  <div>
+                    <p>Total Amount</p>
+                    <p>
+                      {" "}
+                      <Icon disabled name="rupee sign" />
+                      {SumTotal()}
+                    </p>
+                  </div>
+                  <p>Cart Total</p>
                 </div>
-                {/* <p>Discount</p> */}
-                <div>
-                <p>GST 18%</p>
-                </div>
-                <div>
-                <p>Total Amount</p>
-                <p> <Icon disabled name="rupee sign"/>{SumTotal()}</p>
-                </div>
-                <p>Cart Total</p>
-              </div>
               </div>
             </div>
-          }
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </>
