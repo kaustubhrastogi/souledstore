@@ -357,11 +357,11 @@ const TryMock = {
       data: [
         {
           id: 1,
-          name: "That's What She Said",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1659682743_1416968.jpg?format=webp&w=240&dpr=1.0",
+          name: "Solids: Shiny Metal",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1668147428_6322160.jpg?format=webp&w=300&dpr=1.0",
           category: "special",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1655356632_9622383.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1668147428_9874452.jpg?format=webp&w=376&dpr=1.0",
           price: 849,
           offPrice: 699,
           percentOff: "33%",
@@ -369,11 +369,11 @@ const TryMock = {
         },
         {
           id: 2,
-          name: "The Simpsons: Haters",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1656045266_4908683.jpg?format=webp&w=240&dpr=1.0",
+          name: "Solids: Navy Blue",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1665465995_4363004.jpg?format=webp&w=300&dpr=1.0",
           category: "special",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1656045266_2012521.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1663137987_2434883.jpg?format=webp&w=376&dpr=1.0",
           price: 749,
           offPrice: 679,
           percentOff: "23%",
@@ -382,11 +382,11 @@ const TryMock = {
 
         {
           id: 3,
-          name: "The Simpsons: Flexing",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1654844464_2327811.jpg?format=webp&w=240&dpr=1.0",
+          name: "Knitted Sweater: Fuschia Pink",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666367299_6659470.jpg?format=webp&w=300&dpr=1.0",
           category: " special",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1654080797_2796751.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666366871_4969402.jpg?format=webp&w=376&dpr=1.0",
           price: 599,
           offPrice: 359,
           percentOff: "34%",
@@ -394,37 +394,13 @@ const TryMock = {
         },
         {
           id: 4,
-          name: "Captain America : Shield",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1655571622_6747331.jpg?format=webp&w=240&dpr=1.0",
+          name: "Peanuts:  Varsity Jacket",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1644237813_1083830.gif?format=webp&w=300&dpr=1.0",
           category: "special",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1643364456_7691750.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1640919098_6163160.jpg?format=webp&w=376&dpr=1.0",
           price: 749,
           offPrice: 599,
-          percentOff: "43%",
-          count: 1,
-        },
-        {
-          id: 5,
-          name: "Batman : Gotham's Knight",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666162151_8762188.jpg?format=webp&w=240&dpr=1.0",
-          imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1656305043_4989429.jpg?format=webp&w=360&dpr=1.0",
-          category: "special",
-          price: 699,
-          offPrice: 399,
-          percentOff: "43%",
-          count: 1,
-        },
-        {
-          id: 6,
-          name: "Courage face",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1652179428_4908262.jpg?format=webp&w=240&dpr=1.0",
-          category: " special",
-          imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1645689551_4126373.jpg?format=webp&w=360&dpr=1.0",
-          price: 889,
-          offPrice: 649,
           percentOff: "43%",
           count: 1,
         },

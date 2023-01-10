@@ -41,7 +41,7 @@ export const WishListComp = () => {
           </div>
         ))
       ) : (
-        <h1>Wish List is Empty</h1>
+        <h1 style={{margin:'0 70%', width:'100%'}}>Wish List Is Empty</h1>
       )}
     </div>
   );

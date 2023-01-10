@@ -47,14 +47,12 @@ const Header = () => {
   // console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
-    if(name=='WOMEN'){
-      dispatch(getGender(TryMock.WOMEN))
-    }
-    else if (name=="MEN"){
-      dispatch(getGender(TryMock.MEN))
-    }
-    else{
-      dispatch(TryMock.category)
+    if (name == "WOMEN") {
+      dispatch(getGender(TryMock.WOMEN));
+    } else if (name == "MEN") {
+      dispatch(getGender(TryMock.MEN));
+    } else {
+      dispatch(TryMock.category);
     }
 
     // dispatch(getGender(name))
@@ -65,31 +63,34 @@ const Header = () => {
       <div className="header-main">
         <div className="header-main-prim">
           <Menu pointing>
-            <p className="logo-head">
-              <p>Soul</p>
-              <p>Fabric</p>
-            </p>
-            <Menu.Item
-              name="MEN"
-              active={activeItem === "MEN"}
-              onClick={categoryFunc}
-              as={Link}
-              to="/Men"
-            />
-            <Menu.Item
-              name="WOMEN"
-              active={activeItem === "WOMEN"}
-              onClick={categoryFunc}
-              as={Link}
-              to="/Women"
-            />
-            <Menu.Item
-              name="CHILD"
-              active={activeItem === "CHILD"}
-              onClick={categoryFunc}
-              as={Link}
-              to="/Child"
-            />
+            <Menu.Item as={Link} to="/Men">
+              <p to="/Men" className="logo-head">
+                <p>Soul</p>
+                <p>Fabric</p>
+              </p>
+            </Menu.Item>
+
+            <Link to="/Men">
+              <Menu.Item
+                name="MEN"
+                active={activeItem === "MEN"}
+                onClick={categoryFunc}
+              />
+            </Link>
+            <Link to="/Women">
+              <Menu.Item
+                name="WOMEN"
+                active={activeItem === "WOMEN"}
+                onClick={categoryFunc}
+              />
+            </Link>
+            <Link to="/Child">
+              <Menu.Item
+                name="CHILD"
+                active={activeItem === "CHILD"}
+                onClick={categoryFunc}
+              />
+            </Link>
             <Menu.Menu position="right">
               <Menu.Item name="WishListComp" as={Link} to="/Contactus">
                 <p href="">
@@ -111,11 +112,7 @@ const Header = () => {
                   {wishListItem.length}
                 </Badge>
               </Menu.Item>
-              <>
-                <p className="search-comp">
-                  <SearchComponent />
-                </p>
-              </>
+
               <Menu.Item as={Link} to="/cart">
                 <Icon name="in cart" size="big" />
                 <Badge
@@ -126,6 +123,9 @@ const Header = () => {
                   {Object.keys(cartItem).length}
                 </Badge>
               </Menu.Item>
+              <p className="search-comp">
+                <SearchComponent />
+              </p>
             </Menu.Menu>
           </Menu>
         </div>
