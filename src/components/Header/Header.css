@@ -45,6 +45,7 @@
 .ui.menu .active.item {
   font-family: "Playfair Display", serif;
 }
+
 /* .header-options {
   min-height: 7vh;
   background-color: white;
@@ -79,6 +80,7 @@ i.big.icon {
   right: 210px;
   color: black;
   text-align: center;
+  margin: 0 ;
 }
 .ui.three.cards {
   text-align: center;
