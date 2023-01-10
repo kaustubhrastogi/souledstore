@@ -84,7 +84,9 @@ const Header = () => {
                 <p href="">
                   <Icon name="user circle" size="big" />
                 <p>{userdata.loginData.name}</p>
-                <button onClick={()=>dispatch(logout())}>logout</button>
+               { userdata.loginData.name ?
+                <button onClick={()=>dispatch(logout())}>logout</button>:null
+               }
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">

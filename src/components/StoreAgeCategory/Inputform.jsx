@@ -14,16 +14,12 @@ const Inputform = ({ register }) => {
     const [invalid, setInvalid] = useState("")
     const submitThis = () => {
         const info = { name:name ,email: email, password: password };
-        setDataInput([info]);
-        dispatch(login(info));
-
-
-        // localStorage.setItem('datainput', JSON.stringify([...dataInput, info]));
+        setDataInput([info]);      
         let olddata = localStorage.getItem('datainput')
         let oldArr = JSON.parse(olddata)
 
         const user = oldArr.filter(arr => {
-            if (arr.name==name &&(arr.email == email) && (arr.password == password)) {
+            if (arr.name==name  && (arr.password == password)) {
                 return true
             }
             else return false
@@ -33,12 +29,13 @@ const Inputform = ({ register }) => {
         if (user[0]) {
 
             navigate(`/`);
+            dispatch(login(info));
 
 
         }
         else {
 
-            setInvalid("invalid usser")
+            setInvalid("invalid usser or register")
 
         }
     }
@@ -56,16 +53,14 @@ const Inputform = ({ register }) => {
                         <Form.Input fluid label='Name' placeholder='Name'
                             type="text" name="email" id="name" value={name}
                             onChange={(e) => setName(e.target.value)} required />
-                        <Form.Input fluid label='Email' placeholder='Email'
-                            type="text" name="email" id="email" value={email}
-                            onChange={(e) => setEmail(e.target.value)} required />
+                       
 
 
                         <Form.Input fluid label='Password' placeholder='Password'
                             type="text" name="passw" id="passw" value={password}
                             onChange={(e) => setPassword(e.target.value)} required />
 
-                        <Form.Checkbox label='I agree to the Terms and Conditions' />
+
                         <Button type='submit'>Submit</Button>
                     </Form>
                 </Segment>

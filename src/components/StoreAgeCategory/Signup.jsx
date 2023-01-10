@@ -1,34 +1,48 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { Button, Form, Segment } from 'semantic-ui-react'
+import { login } from '../../redux/login-reducer';
 import Footer from '../Footer/Footer';
 import Login from './Login';
 
 export default function Signup({ register }) {
 
-
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [submitted, setSubmitted] = useState(false);
-    const [error, setError] = useState(false);
+    const [infor, setInfor] = useState("");
     const [dataInput, setDataInput] = useState([]);
-
+    const dispatch = useDispatch();
 
     const submitThis = () => {
         const info = { name: name, email: email, password: password };
         setDataInput([info]);
-        // localStorage.setItem('datainput', JSON.stringify([...dataInput, info]));
-        let olddata = localStorage.getItem('datainput');
-        if (olddata == null) {
+
+        dispatch(login(info));
+        let olddata = localStorage.getItem('datainput');    
+        let oldArr = JSON.parse(olddata)
+        
+        if (!olddata  ) {
             olddata = []
             olddata.push(info)
             localStorage.setItem('datainput', JSON.stringify(olddata));
-        } else {
+            setSubmitted(true);
+            navigate(`/`);
+           
+        } 
+    
+        else {
             let oldArr = JSON.parse(olddata)
             oldArr.push(info)
             localStorage.setItem("datainput", JSON.stringify(oldArr))
             console.log(oldArr, 'hhg')
+            setSubmitted(true);
+            navigate(`/`);
+            
         }
     }
     const handleName = (e) => {
@@ -48,17 +62,6 @@ export default function Signup({ register }) {
         setSubmitted(false);
     };
 
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (name === '' || email === '' || password === '') {
-            setError(true);
-        } else {
-            setSubmitted(true);
-            setError(false);
-        }
-    };
-
     const successMessage = () => {
         return (
             <div
@@ -67,38 +70,29 @@ export default function Signup({ register }) {
                     display: submitted ? '' : 'none',
                 }}>
                 <h1>User {name} successfully registered!!</h1>
-
+                
             </div>
         );
     };
 
 
-    const errorMessage = () => {
-        return (
-            <div
-                className="error"
-                style={{
-                    display: error ? '' : 'none',
-                }}>
-                <h1>Please enter all the fields</h1>
-            </div>
-        );
-    };
+
 
     return (
         <div>
             <Login />
-                <div className="messages">
-                    {errorMessage()}
-                    {successMessage()}
-                </div>
-                <div className='divspace'>
+            <div className="messages">
+
+                {successMessage()}
+            </div>
+            <div className='divspace'>
                 <div style={{ width: '600px', margin: 'auto' }}>
-                <Segment >
-                    <div className='divspace'>
-                        <h1>User Registration</h1>
-                    </div>
-                   
+                    <Segment >
+                        <div className='divspace'>
+                            <h1>User Registration</h1>
+                            <h3>{infor}</h3>
+                        </div>
+
                         <img
                             className="appLogo"
                             src="https://www.thesouledstore.com/static/img/300x157-twitter.png"
@@ -107,31 +101,31 @@ export default function Signup({ register }) {
 
 
                             <Form.Input fluid label='Name' onChange={handleName} className="input"
-                                value={name} type="text" required/>
+                                value={name} type="text" required />
                             <Form.Group widths={2}>
 
                                 <Form.Input fluid label='Email' onChange={handleEmail} className="input"
-                                    value={email} type="email"  required/>
+                                    value={email} type="email" required />
 
 
                                 <Form.Input fluid label='Password' onChange={handlePassword} className="input"
-                                    value={password} type="password" required/>
+                                    value={password} type="password" required />
                             </Form.Group>
-                            <Form.Checkbox label='I agree to the Terms and Conditions' />
+
                             <Button className="btn" type="submit">
                                 Submit
                             </Button>
                         </Form>
 
-                </Segment>
+                    </Segment>
                 </div>
 
 
                 <div className='divspace'>
                     <Footer />
                 </div>
-                </div>
             </div>
+        </div>
 
     );
 }
