@@ -1,12 +1,25 @@
 import React, { useEffect, useState } from "react";
 import cardMockData from "../../Data/cardMockData";
 import "./cart.css";
-import { Button, Icon, Input } from "semantic-ui-react";
+import { Button, Dropdown, Icon, Input } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment, removeFromCart } from "../../redux/cart-reducer";
 
 const CartComponent = () => {
-  // const [count,setCount]=useState(1)
+  const friendOptions = [
+    {
+      key: '1',
+      text: 'Flat50',
+      value: '0.5',
+    },
+    {
+      key: '2',
+      text: 'Flat40',
+      value: '0.4',
+    },   
+  ]
+  const [off,setOff]=useState()
+  console.log('off',off)
   const { cartItem } = useSelector((state) => state.cart.data);
   // const count = useSelector((state)=>state.cart.data)
   // const totalAmount= useSelector((state)=>state.cart.data)
@@ -22,9 +35,15 @@ const CartComponent = () => {
   const SumTotal = () => {
     let sum = 0;
     Object.keys(cartItem).map((c) => {
-      sum = cartItem[c].price + sum;
+      sum = cartItem[c].price * (cartItem[c].count) + sum;
+      {
+        if(off){
+        sum= sum - sum*Number(off)
+        return sum
+      }
+    }
     });
-    return sum;
+    return (sum * 1.18).toFixed(2);
   };
 
   // console.log("cardmock in cart", cardMockData[0].name);
@@ -101,7 +120,7 @@ const CartComponent = () => {
                   PLACE ORDER
                 </Button.Content>
               </Button>
-              <Input
+              {/* <Input
                 size="mini"
                 icon="tags"
                 iconPosition="left"
@@ -111,6 +130,12 @@ const CartComponent = () => {
                 onChange={(e) => {
                   console.log(e.target.value);
                 }}
+              /> */}
+              <Dropdown
+                placeholder='Select Friend'
+                selection
+                options={friendOptions}
+                onChange={(e,value)=>setOff(value.value)}
               />
               <div>
                 <h6 style={{ marginTop: "24px", marginBottom: "0" }}>
@@ -128,7 +153,11 @@ const CartComponent = () => {
                   <div>
                     <p>Total Amount</p>
                     <p>
-                      {" "}
+                      <Icon disabled name="rupee sign" />
+                      {/* {SumTotal()} */}
+                    </p>
+                    <p>Actual Amount</p>
+                    <p>
                       <Icon disabled name="rupee sign" />
                       {SumTotal()}
                     </p>
