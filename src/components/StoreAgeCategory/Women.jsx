@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AgeCategory.css";
 import { Link, useParams } from "react-router-dom";
 import WomenMenChildCollection from "../../Data/WomenMenChildCollectionCard";
 import Footer from "../Footer/Footer";
 import CarouselComp from "../CarouselComp";
+// import { getGender,  WomenData } from "../../redux/categoryReducer";
+import { getGender } from "../../redux/genderDataReducer";
+import { useDispatch } from "react-redux";
+import TryMock from "../../Data/TryMock";
+import { getCategory } from "../../redux/categoryReducer";
 
 const Women = () => {
   const womenCollection = WomenMenChildCollection.gender.women;
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -19,9 +25,14 @@ const Women = () => {
         <h1>COLLECTIONS</h1>
         <div className="collection-cards">
           {womenCollection.map((i, index, name) => {
-            {console.log('womenCollection',womenCollection);}
+            {
+              console.log("womenCollection", womenCollection);
+            }
             return (
-              <div className="collection-card-prim">
+              <div
+                className="collection-card-prim"
+                onClick={() => dispatch(getCategory(index))}
+              >
                 <div className="collection-card-prim-women">
                   <Link to={`/subcategory/${index}`}>
                     <img key="{item}" src={i.img} alt="" />

@@ -21,15 +21,16 @@ const ProductComponent = () => {
   const dispatch = useDispatch();
   const { categoryItem } = useSelector((state) => state.category.data);
   const {wishListItem} = useSelector((state)=>state.wishList.data)
+  const { genderItem } = useSelector((state) => state.genderData.data);
   console.log("from redux==================>", categoryItem);
   const { id } = useParams();
   console.log("dataItem===>", TryMock);
-  console.log("dataItem===>", TryMock.category[id]);
+  console.log("dataItem===>", genderItem[id]);
   const { name, img, category, price, offPrice, percentOff, imgMove } =
-    TryMock.category[categoryItem].data[id];
+    genderItem[categoryItem].data[id];
 
     const AddWishFn = () => (
-      dispatch(addWish(TryMock.category[categoryItem].data[id]))
+      dispatch(addWish(genderItem[categoryItem].data[id]))
     )
 
   return (
@@ -75,7 +76,7 @@ const ProductComponent = () => {
           {/* <p>Quantity</p> */}
 
           <div>
-            <Button positive onClick={()=>{dispatch(addCart(TryMock.category[categoryItem].data[id]))}}>
+            <Button positive onClick={()=>{dispatch(addCart(genderItem[categoryItem].data[id]))}}>
               <Icon name="add to cart" /> ADD TO CART
             </Button>
             <Button basic color="red" onClick={()=>{ AddWishFn() }} >

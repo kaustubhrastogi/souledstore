@@ -12,7 +12,7 @@ const SubCategoryCard = ({
   price,
   offPrice,
 }) => {
-  console.log("category",category);
+  // console.log("category", category);
   return (
     <>
       <div className="subcategory-main-container">

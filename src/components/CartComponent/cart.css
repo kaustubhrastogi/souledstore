@@ -36,5 +36,16 @@
 .billing-details p:nth-child(even) {
   /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
   font-size: 18px;
-  line-height:18px;
+  line-height: 18px;
+}
+
+.btn-div span Button {
+  /* background-color: green !important; */
+  color: orange;
+  text-align: center !important;
+  margin: 7px !important;
+}
+.btn-div span Button:hover{
+  background-color: green !important;
+  color: white !important;
 }

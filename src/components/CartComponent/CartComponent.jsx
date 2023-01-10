@@ -37,7 +37,7 @@ const CartComponent = () => {
               <div className="cart-product-main">
                 <div className="cart-product-main-img">
                   <img src={cartItem[curr].img} alt="" />
-                  <div className="cart-product-main-product-desc">
+                  <div style={{textAlign:'left', marginLeft:'39px'}} className="cart-product-main-product-desc">
                     <div className="cart-product-main-product-desc-sec">
                       <h3>{cartItem[curr].name}</h3>
                       <h3>{cartItem[curr].category}</h3>
@@ -47,18 +47,18 @@ const CartComponent = () => {
                         <Icon name="rupee" /> {cartItem[curr].price}
                       </p>
                     </div>
-                    <div>
+                    <div className="btn-div">
                       <p>
-                        Quantity:
+                        <b>Quantity:</b>
                         <span>
-                          <button onClick={()=>{dispatch(decrement(cartItem[curr].id))}}>-</button>
-                          <span>{cartItem[curr].count}</span> 
-                          <button onClick={()=>{dispatch(increment(cartItem[curr].id))}}>+</button>
+                          <Button size="mini"  onClick={()=>{dispatch(decrement(cartItem[curr].id))}}> <Icon name="minus" /> </Button>
+                          <span>{cartItem[curr].count}</span>
+                          <Button size="mini" onClick={()=>{dispatch(increment(cartItem[curr].id))}}><Icon name="plus" /></Button>
                         </span>
                       </p>
-                      <button onClick={() => dispatch(removeFromCart(index))}>
-                        Remove
-                      </button>
+                      <Button color="black" onClick={() => dispatch(removeFromCart(index))}>
+                         <Icon name="trash alternate" /> Remove
+                      </Button>
                     </div>
                   </div>
                 </div>
