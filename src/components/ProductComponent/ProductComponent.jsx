@@ -21,7 +21,7 @@ const ProductComponent = () => {
   const [ btn, setBtn]= useState(true)
   const dispatch = useDispatch();
   const { categoryItem } = useSelector((state) => state.category.data);
-  const {wishListItem} = useSelector((state)=>state.wishList.data)
+  const { wishListItem } = useSelector((state) => state.wishList.data);
   const { genderItem } = useSelector((state) => state.genderData.data);
   console.log("from redux==================>", categoryItem);
   const { id } = useParams();
@@ -30,12 +30,14 @@ const ProductComponent = () => {
   const { name, img, category, price, offPrice, percentOff, imgMove } =
     genderItem[categoryItem].data[id];
 
+  const AddWishFn = () => dispatch(addWish(genderItem[categoryItem].data[id]));
+
   return (
     <>
       <h2>Your's Product</h2>
       <div className="product-component-main">
         <div className="product-profile">
-          <Reveal animated="move">
+          <Reveal animated="move right">
             <Reveal.Content visible>
               <Image src={img} />
             </Reveal.Content>
@@ -73,29 +75,24 @@ const ProductComponent = () => {
           <p>Quantity</p>
 
           <div>
-            {!btn ? <Button positive onClick={()=>{dispatch(addCart(TryMock.category[categoryItem].data[id]))}}>
+            <Button
+              positive
+              onClick={() => {
+                dispatch(addCart(genderItem[categoryItem].data[id]));
+              }}
+            >
               <Icon name="add to cart" /> ADD TO CART
-            </Button>:
-             <Button basic color="red" onClick={()=>{
-              dispatch(addWish(TryMock.category[categoryItem].data[id]))
-              if(wishListItem.length>0){
-                let newData = wishListItem.filter((c)=>{
-                  if(c.id===TryMock.category[categoryItem].data[id].id){
-                    return true
-                  }else{
-                    return false
-                  }
-                  
-                  })
-                console.log('newData=>',newData)
-                if(newData.length==1){
-                  setBtn(false)
-                }
-              }
-              }} >
+            </Button>
+            <Button
+              basic
+              color="red"
+              onClick={() => {
+                AddWishFn();
+              }}
+            >
               <Icon name="heart" />
               ADD TO WISHLIST
-            </Button>}
+            </Button>
           </div>
           <hr />
           {/* ------------------------------------------------ ADD Dropdown here for product details/ description  */}

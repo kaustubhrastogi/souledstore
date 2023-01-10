@@ -13,7 +13,7 @@ export const WishListComp = () => {
     <div className="subcategory-main">
       {wishListItem && wishListItem.length > 0 ? (
         wishListItem.map((i, index) => (
-          <div style={{ width: "58%", margin: "9px" }}>
+          <div style={{ width: "54%", margin: "4px" }}>
             <SubCategoryCard
               index={index}
               id={i.id}

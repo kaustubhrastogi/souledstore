@@ -13,7 +13,8 @@
   display: flex;
 }
 .cart-product-main-img img {
-  width: 24%;
+  width: 26.7%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .cart-product-main-product-desc {
@@ -30,14 +31,30 @@
 }
 
 .billing-details {
-  border: 2px solid rgb(153, 158, 161);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.589) 0px 3px 7px -3px;
   margin: 13px;
+  padding: 13px;
 }
-.billing-details p:nth-child(even) {
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
+
+.billing-details div:nth-child(1) {
+  border-bottom: 1px solid rgba(75, 75, 75, 0.541);
+}
+.billing-details div:nth-child(3) {
+  border-bottom: 1px solid rgba(75, 75, 75, 0.541);
+}
+
+.billing-details p{
+  font-size: 17px;
+  font-weight: 900;
+}
+.billing-details p:nth-child(4){
+  padding: 6px;
+}
+/* .billing-details p:nth-child(even) {
   font-size: 18px;
   line-height: 18px;
-}
+} */
 
 .btn-div span Button {
   /* background-color: green !important; */
@@ -45,7 +62,7 @@
   text-align: center !important;
   margin: 7px !important;
 }
-.btn-div span Button:hover{
+.btn-div span Button:hover {
   background-color: green !important;
   color: white !important;
 }

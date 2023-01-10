@@ -294,7 +294,6 @@ const TryMock = {
           percentOff: "43%",
           count: 1,
         },
-        
       ],
     },
     {
@@ -303,11 +302,11 @@ const TryMock = {
       data: [
         {
           id: 1,
-          name: "Solids: Red",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669457090_3751273.jpg?format=webp&w=240&dpr=1.0",
+          name: "Winnie The Pooh",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1668234233_7448200.jpg?format=webp&w=240&dpr=1.0",
           category: "hoodies",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1664013179_8751360.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1668094498_4287345.jpg?format=webp&w=360&dpr=1.0",
           price: 849,
           offPrice: 699,
           percentOff: "43%",
@@ -315,11 +314,11 @@ const TryMock = {
         },
         {
           id: 2,
-          name: "Cartoon Network: 90's",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1646998704_4613157.jpg?format=webp&w=240&dpr=1.0",
+          name: "Tie Dye: Ice Cream",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1668070093_8856079.jpg?format=webp&w=240&dpr=1.0",
           category: "hoodies",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1646998680_1022498.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667376644_1711225.jpg?format=webp&w=360&dpr=1.0",
           price: 1249,
           offPrice: 1199,
           percentOff: "43%",
@@ -328,11 +327,11 @@ const TryMock = {
 
         {
           id: 3,
-          name: "Popeye: The Sailor Man",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1671605509_5542035.jpg?format=webp&w=240&dpr=1.0",
+          name: "Powerpuff Girls: Blossom",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1668877699_6880310.jpg?format=webp&w=240&dpr=1.0",
           category: "hoodies",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1671550303_9093660.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667812727_2150829.jpg?format=webp&w=360&dpr=1.0",
           price: 599,
           offPrice: 359,
           percentOff: "34%",
@@ -340,39 +339,13 @@ const TryMock = {
         },
         {
           id: 4,
-          name: "Solid : Soft grey",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669485239_4184959.jpg?format=webp&w=240&dpr=1.0",
+          name: "Powerpuff Girls",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667812403_2106882.jpg?format=webp&w=240&dpr=1.0",
           category: "hoodies",
           imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669485256_4771868.jpg?format=webp&w=360&dpr=1.0",
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666354131_6471139.jpg?format=webp&w=360&dpr=1.0",
           price: 749,
           offPrice: 599,
-          percentOff: "43%",
-          count: 1,
-        },
-        {
-          id: 5,
-          name: "Looney Toons: Bugs Special",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670086607_7310087.jpg?format=webp&w=240&dpr=1.0",
-          // imgMove:
-          //   "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1661773633_3657738.jpg?format=webp&w=576&dpr=1.0",
-          category: "hoodies",
-          imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670086620_5318985.jpg?format=webp&w=360&dpr=1.0",
-          price: 699,
-          offPrice: 399,
-          percentOff: "43%",
-          count: 1,
-        },
-        {
-          id: 6,
-          name: "batman : Iconic bat",
-          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669265073_5083197.jpg?format=webp&w=240&dpr=1.0",
-          category: " hoodies",
-          imgMove:
-            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669265073_8464292.jpg?format=webp&w=360&dpr=1.0",
-          price: 889,
-          offPrice: 649,
           percentOff: "43%",
           count: 1,
         },

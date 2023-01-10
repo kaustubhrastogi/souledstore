@@ -40,9 +40,9 @@ const SubCategory = () => {
     setSearchText(e.target.value);
   }
   // -------------------------- Soring Products with Price-range
-  if (priceRange == "ascending") {
+  if (priceRange === "ascending") {
     mockSample.sort((a, b) => (a.offPrice > b.offPrice ? 1 : -1));
-  } else if (priceRange == "descending") {
+  } else if (priceRange === "descending") {
     mockSample.sort((a, b) => (a.offPrice > b.offPrice ? -1 : 1));
   }
   console.log("filter here....", genderItem);

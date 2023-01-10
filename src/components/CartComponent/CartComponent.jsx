@@ -104,7 +104,7 @@ const CartComponent = () => {
                 </div>
                 <div>
                 <p>Total Amount</p>
-                <p>{SumTotal()}</p>
+                <p> <Icon disabled name="rupee sign"/>{SumTotal()}</p>
                 </div>
                 <p>Cart Total</p>
               </div>
