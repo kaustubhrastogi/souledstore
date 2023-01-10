@@ -4,8 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import Badge from "react-bootstrap/Badge";
 import { useSelector, useDispatch } from "react-redux";
-import { getCategory, getGender } from "../../redux/categoryReducer";
+import { getCategory } from "../../redux/categoryReducer";
 import SearchComponent from "../SearchComponent/SearchComponent";
+import TryMock from "../../Data/TryMock";
+import { getGender } from "../../redux/genderDataReducer";
 
 const linkuri = [
   {
@@ -36,17 +38,27 @@ const Header = () => {
   const [username, setUsername] = useState("");
   const dispatch = useDispatch();
   const { wishListItem } = useSelector((state) => state.wishList.data);
-  const { cartItem } = useSelector((state) => state.cart.data)
-  const userdata = useSelector((state) => state.login.data)
+  const { cartItem } = useSelector((state) => state.cart.data);
+  const userdata = useSelector((state) => state.login.data);
   // let userdetails = JSON.parse(userdata)
-  console.log("userdata====>",(userdata.loginData.name))
+  // console.log("userdata====>",(userdata.loginData.name))
   // console.log("name====>",userdata.loginData.name)
-  console.log(itemSearch);
+  // console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
-    dispatch(getGender(name))
+    if(name=='WOMEN'){
+      dispatch(getGender(TryMock.WOMEN))
+    }
+    else if (name=="MEN"){
+      dispatch(getGender(TryMock.MEN))
+    }
+    else{
+      dispatch(TryMock.category)
+    }
+
+    // dispatch(getGender(name))
   };
-  console.log(activeItem);
+  // console.log(activeItem);
   return (
     <>
       <div className="header-main">
@@ -69,7 +81,6 @@ const Header = () => {
               onClick={categoryFunc}
               as={Link}
               to="/Women"
-
             />
             <Menu.Item
               name="CHILD"
@@ -82,23 +93,33 @@ const Header = () => {
               <Menu.Item name="WishListComp" as={Link} to="/Contactus">
                 <p href="">
                   <Icon name="user circle" size="big" />
-                <p>{userdata.loginData.name}</p>
+                  <p>{userdata.loginData.name}</p>
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
                 <Icon name="heart outline" size="big" />
 
-                <Badge bg="white" className="badgestyle" style={{ color: "black"}}>
+                <Badge
+                  bg="white"
+                  className="badgestyle"
+                  style={{ color: "black" }}
+                >
                   {wishListItem.length}
                 </Badge>
               </Menu.Item>
               <>
-              <p className="search-comp"><SearchComponent /></p>
+                <p className="search-comp">
+                  <SearchComponent />
+                </p>
               </>
               <Menu.Item as={Link} to="/cart">
-                <Icon name="in cart" size="big"  />
-                <Badge bg="white" className="badgestyle" style={{ color: "black" }}>
-                    {Object.keys(cartItem).length}
+                <Icon name="in cart" size="big" />
+                <Badge
+                  bg="white"
+                  className="badgestyle"
+                  style={{ color: "black" }}
+                >
+                  {Object.keys(cartItem).length}
                 </Badge>
               </Menu.Item>
             </Menu.Menu>

@@ -49,7 +49,7 @@
 .collection-cards div:nth-child(2) img {
   width: 78%;
 }
-.collection-card-prim:nth-child(2) .collection-card-prim-women{
+.collection-card-prim:nth-child(2) .collection-card-prim-women {
   width: 58%;
   margin-left: 98px;
 }
@@ -59,7 +59,9 @@
 }
 
 .collection-card-prim div img:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   transform: scale(1.01);
   transition: 0.4s;
   cursor: pointer;
@@ -116,7 +118,6 @@
   margin: 1rem;
 }
 .btndirection {
-
   display: flex;
   margin: 2rem;
 }
@@ -140,38 +141,39 @@
 .ordermaneg {
   display: flex;
   justify-content: center;
-  margin: 2rem
+  margin: 2rem;
 }
 
 .btndirection {
   display: flex;
   justify-content: space-around;
-
-
 }
 
 .btnstyle {
-width: 16rem;
-height: 6rem;
-background-color: gray;
-border-color: gray;
-display: flex;
-
-
+  width: 16rem;
+  height: 6rem;
+  background-color: gray;
+  border-color: gray;
+  display: flex;
 }
 
-.linkstyle{
+.linkstyle {
   width: 20rem;
-margin: auto;
-color: red;
-
-
+  margin: auto;
+  color: red;
 }
-.sp1{
-background-color: rgb(0,89,89);
-height: 80px;
-margin-top: 40px;
+.sp1 {
+  background-color: rgb(0, 89, 89);
+  height: 80px;
+  margin-top: 40px;
 }
-.divspace{
+.divspace {
   margin-top: 30px;
+}
+
+
+.collection-card-prim:nth-child(2) P{
+  /* background-color: crimson; */
+  width: 110%;
+  margin-left: -14px;
 }

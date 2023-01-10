@@ -9,19 +9,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cart-reducer";
 
 const SubCategory = () => {
-  const NewwomenCollection = TryMock;
-  console.log("NewwomenCollection", NewwomenCollection.women);
+  const { categoryItem } = useSelector((state) => state.category.data);
+  const { genderItem } = useSelector((state) => state.genderData.data);
+  // console.log("categoryItem========>", categoryItem);
+  // console.log(TryMock.WOMEN);
+  // const { filteredMen } = useSelector((state) => state.category.data);
+  // console.log("genderItem======>", filteredMen);
+
   const { id } = useParams();
-  console.log("route is ============>", id);
-  console.log("TryMock is......", TryMock[id]);
-  console.log("TryMock is......", TryMock.category);
+  // console.log("route is ============>", id);
+  // console.log("TryMock is......", TryMock[id]);
+
   const dispatch = useDispatch();
   // console.log('TryMock is',TryMock.category[id].cardOneHead ,TryMock.category[id].data[id])
   const { index } = useParams();
   const [mockSample, setMockSample] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [priceRange, setPriceRange] = useState("popular");
-  const categoryHeading = TryMock.category[id].cardOneHead;
+  const categoryHeading = genderItem[id].cardOneHead;
   // ----------------------------------------- Function For Filter products after search
   const filteredProducts = mockSample.filter(
     ({ name, category }) =>
@@ -29,8 +34,9 @@ const SubCategory = () => {
       category.toLowerCase().includes(searchText.toLowerCase())
   );
 
+  // console.log("women data============>", filteredData);
   function searchProduct(e) {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setSearchText(e.target.value);
   }
   // -------------------------- Soring Products with Price-range
@@ -39,11 +45,14 @@ const SubCategory = () => {
   } else if (priceRange == "descending") {
     mockSample.sort((a, b) => (a.offPrice > b.offPrice ? -1 : 1));
   }
-  console.log("newv", mockSample);
+  console.log("filter here....", genderItem);
+
   // ---------------------------------------------------------
   useEffect(() => {
-    setMockSample(TryMock.category[id].data);
-  }, []);
+    // setMockSample(TryMock.category[id].data);
+    setMockSample(genderItem[id].data);
+  });
+
   return (
     <>
       <h5 className="subcat-head">
