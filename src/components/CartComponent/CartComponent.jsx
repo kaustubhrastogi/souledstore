@@ -36,14 +36,15 @@ const CartComponent = () => {
     let sum = 0;
     Object.keys(cartItem).map((c) => {
       sum = cartItem[c].price * (cartItem[c].count) + sum;
-      {
-        if(off){
-        sum= sum - sum*Number(off)
-        return sum
-      }
-    }
+    //   {
+    //     if(off){
+    //     sum= sum - sum*Number(off)
+    //     return sum
+    //   }
+    // }
     });
-    return (sum * 1.18).toFixed(2);
+    // return (sum * 1.18).toFixed(2);
+    return sum
   };
 
   // console.log("cardmock in cart", cardMockData[0].name);
@@ -154,15 +155,20 @@ const CartComponent = () => {
                     <p>Total Amount</p>
                     <p>
                       <Icon disabled name="rupee sign" />
-                      {/* {SumTotal()} */}
+                      {SumTotal()}
+                    </p>
+                    <p>Total Discount</p>
+                    <p>
+                      <Icon disabled name="rupee sign" />
+                      {off ? Number(off)*SumTotal():0}
                     </p>
                     <p>Actual Amount</p>
                     <p>
                       <Icon disabled name="rupee sign" />
-                      {SumTotal()}
+                      {off? SumTotal()-Number(off)*SumTotal(): SumTotal()}
                     </p>
                   </div>
-                  <p>Cart Total</p>
+                 
                 </div>
               </div>
             </div>
