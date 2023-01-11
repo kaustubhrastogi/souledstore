@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AgeCategory.css";
-import { Grid, Segment } from "semantic-ui-react";
-import WomenCollectionCardData from "../../Data/WomenCollectionCard";
-
-import { Button, Card, Image, Container, Icon } from "semantic-ui-react";
+import { Link, useParams } from "react-router-dom";
+import WomenMenChildCollection from "../../Data/WomenMenChildCollectionCard";
+import Footer from "../Footer/Footer";
+import CarouselComp from "../CarouselComp";
+// import { getGender,  WomenData } from "../../redux/categoryReducer";
+import { getGender } from "../../redux/genderDataReducer";
+import { useDispatch } from "react-redux";
+import TryMock from "../../Data/TryMock";
+import { getCategory } from "../../redux/categoryReducer";
 
 const Women = () => {
-  let gett = WomenCollectionCardData;
-  console.log(gett);
+  const womenCollection = WomenMenChildCollection.gender.women;
+  const dispatch = useDispatch();
+
   return (
     <>
-      <div>
-        <div className="slide-container">
-          <img
-            src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-banner_22_1qB155u.jpg?format=webp&w=1366&dpr=1.0"
-            alt=""
-          />
-        </div>
-      </div>
+      <CarouselComp gender="women" />
       {/* ------------------------------------------------- COLLECTION CARD  */}
       <div className="collection-main-container">
+        <div className="headings">
+          <h2>WOMEN IN FASHION</h2>
+        </div>
         <h1>COLLECTIONS</h1>
         <div className="collection-cards">
-          {WomenCollectionCardData.map((i) => {
+          {womenCollection.map((i, index, name) => {
+            {
+              console.log("womenCollection", womenCollection);
+            }
             return (
-              <div className="collection-card-prim">
-                <div>
-                  <img src={i.img} alt="" />
+              <div
+                className="collection-card-prim"
+                onClick={() => dispatch(getCategory(index))}
+              >
+                <div className="collection-card-prim-women">
+                  <Link to={`/subcategory/${index}`}>
+                    <img key="{item}" src={i.img} alt="" />
+                  </Link>
+                  <p>{i.cardOneHead}</p>
                 </div>
               </div>
             );
@@ -37,7 +48,7 @@ const Women = () => {
       <div className="categories-main-container">
         <h1>CATEGORIES</h1>
         <div className="categories-cards">
-          {WomenCollectionCardData.map((i) => {
+          {womenCollection.map((i) => {
             return (
               <div className="categories-card-prim">
                 <div className="img-container">
@@ -48,9 +59,13 @@ const Women = () => {
           })}
         </div>
       </div>
+      {/* -------------------------------------------------------------------------- */}
       {/* --------------------------------------------------------- CATEGORIES GRID  */}
 
       <div className="categories-grid"></div>
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };
