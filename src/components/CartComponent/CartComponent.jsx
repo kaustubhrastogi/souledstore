@@ -107,7 +107,7 @@ const CartComponent = () => {
               </div>
             ))
           ) : (
-            <h1 style={{ margin: "0 40%", width: "100%" }}>No Data Found</h1>
+            <h1 style={{ margin: "0 40%", width: "100%" }}>Your Cart Is Empty !</h1>
           )}
         </div>
         <div>
