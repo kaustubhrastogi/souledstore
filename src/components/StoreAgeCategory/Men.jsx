@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AgeCategory.css";
 import { Link } from "react-router-dom";
 import WomenMenChildCollection from "../../Data/WomenMenChildCollectionCard";
 import Footer from "../Footer/Footer";
 import CarouselComp from "../CarouselComp";
+import TryMock from "../../Data/TryMock";
 // ------------------------------------------------
 import { getCategory } from "../../redux/categoryReducer";
+import { getGender } from "../../redux/genderDataReducer";
 import { useDispatch, useSelector } from "react-redux";
 // ------------------------------------------------
 
 const Men = () => {
   const dispatch = useDispatch();
-  console.log("=======>", WomenMenChildCollection.gender.men);
+  // console.log("=======>", WomenMenChildCollection.gender.men);
   const menCollection = WomenMenChildCollection.gender.men;
+  useEffect(()=>{
+    dispatch(getGender(TryMock.MEN))
+  })
   return (
     <>
       <CarouselComp gender="men" />

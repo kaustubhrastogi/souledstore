@@ -4,6 +4,7 @@ import wishListSlice from './wishList-reducer'
 import cartSlice from './cart-reducer'
 import categorySlice from './categoryReducer'
 import loginSlice from './login-reducer'
+import genderDataSlice from './genderDataReducer'
 
 export const store = configureStore({
     reducer:{
@@ -11,5 +12,6 @@ export const store = configureStore({
         cart: cartSlice.reducer,
         category: categorySlice.reducer,
         login:loginSlice.reducer,
+        genderData:genderDataSlice.reducer,
     }
 })

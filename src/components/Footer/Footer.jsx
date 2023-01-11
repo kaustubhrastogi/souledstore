@@ -41,9 +41,11 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="style__copyright" >
+      <div className="style__copyright">
         <hr />
-        <p style={{margin:'13px'}}>© 2023 <strong>Soul Fabric</strong> . All rights reserved.</p>
+        <p style={{ margin: "13px" }}>
+          © 2023 <strong>Soul Fabric</strong> . All rights reserved.
+        </p>
       </div>
     </>
   );
