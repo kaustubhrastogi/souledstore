@@ -55,9 +55,9 @@ const Header = () => {
   // console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
-    if (name == "WOMEN") {
+    if (name === "WOMEN") {
       dispatch(getGender(TryMock.WOMEN));
-    } else if (name == "MEN") {
+    } else if (name === "MEN") {
       dispatch(getGender(TryMock.MEN));
     } else {
       dispatch(TryMock.category);
@@ -146,12 +146,12 @@ const Header = () => {
               </Menu.Item>
 
               <Menu.Item as={Link} to="/cart">
-              <Popup
+                <Popup
                   trigger={<Icon name="in cart" size="big" />}
                   content="My Cart"
                   size="mini"
                 />
-                
+
                 <Badge
                   bg="white"
                   className="badgestyle"
