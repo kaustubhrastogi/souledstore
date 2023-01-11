@@ -95,10 +95,10 @@ const Header = () => {
               <Menu.Item name="WishListComp" as={Link} to="/Contactus">
                 <p href="">
                   <Icon name="user circle" size="big" />
-                <p>{userdata.loginData.name}</p>
-               { userdata.loginData.name ?
-                <button onClick={()=>dispatch(logout())}>logout</button>:null
-               }
+                  <p>{userdata.loginData.name}</p>
+                  {userdata.loginData.name ? (
+                    <button onClick={() => dispatch(logout())}>logout</button>
+                  ) : null}
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
