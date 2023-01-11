@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Input, Menu, Segment, Icon, Dropdown } from "semantic-ui-react";
+import {
+  Input,
+  Menu,
+  Segment,
+  Icon,
+  Dropdown,
+  Button,
+} from "semantic-ui-react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import Badge from "react-bootstrap/Badge";
@@ -70,22 +77,25 @@ const Header = () => {
               </p>
             </Menu.Item>
 
-            <Link to="/Men">
+            <Link style={{ marginTop: "0px" }} to="/Men">
               <Menu.Item
+                style={{ minHeight: "13.5vh" }}
                 name="MEN"
                 active={activeItem === "MEN"}
                 onClick={categoryFunc}
               />
             </Link>
-            <Link to="/Women">
+            <Link style={{ marginTop: "0px" }} to="/Women">
               <Menu.Item
+                style={{ minHeight: "13.5vh" }}
                 name="WOMEN"
                 active={activeItem === "WOMEN"}
                 onClick={categoryFunc}
               />
             </Link>
-            <Link to="/Child">
+            <Link style={{ marginTop: "0px" }} to="/Child">
               <Menu.Item
+                style={{ minHeight: "13.5vh" }}
                 name="CHILD"
                 active={activeItem === "CHILD"}
                 onClick={categoryFunc}
@@ -97,7 +107,13 @@ const Header = () => {
                   <Icon name="user circle" size="big" />
                   <p>{userdata.loginData.name}</p>
                   {userdata.loginData.name ? (
-                    <button onClick={() => dispatch(logout())}>logout</button>
+                    <Button
+                      size="mini"
+                      secondary
+                      onClick={() => dispatch(logout())}
+                    >
+                      logout
+                    </Button>
                   ) : null}
                 </p>
               </Menu.Item>

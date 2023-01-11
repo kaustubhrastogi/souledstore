@@ -8,18 +8,18 @@ import { decrement, increment, removeFromCart } from "../../redux/cart-reducer";
 const CartComponent = () => {
   const friendOptions = [
     {
-      key: '1',
-      text: 'Flat50',
-      value: '0.5',
+      key: "1",
+      text: "Flat50",
+      value: "0.5",
     },
     {
-      key: '2',
-      text: 'Flat40',
-      value: '0.4',
-    },   
-  ]
-  const [off,setOff]=useState()
-  console.log('off',off)
+      key: "2",
+      text: "Flat40",
+      value: "0.4",
+    },
+  ];
+  const [off, setOff] = useState();
+  console.log("off", off);
   const { cartItem } = useSelector((state) => state.cart.data);
   // const count = useSelector((state)=>state.cart.data)
   // const totalAmount= useSelector((state)=>state.cart.data)
@@ -35,16 +35,16 @@ const CartComponent = () => {
   const SumTotal = () => {
     let sum = 0;
     Object.keys(cartItem).map((c) => {
-      sum = cartItem[c].price * (cartItem[c].count) + sum;
-    //   {
-    //     if(off){
-    //     sum= sum - sum*Number(off)
-    //     return sum
-    //   }
-    // }
+      sum = cartItem[c].price * cartItem[c].count + sum;
+      //   {
+      //     if(off){
+      //     sum= sum - sum*Number(off)
+      //     return sum
+      //   }
+      // }
     });
     // return (sum * 1.18).toFixed(2);
-    return sum
+    return sum;
   };
 
   // console.log("cardmock in cart", cardMockData[0].name);
@@ -107,7 +107,7 @@ const CartComponent = () => {
               </div>
             ))
           ) : (
-            <h1 style={{margin:'0 40%', width:'100%'}}>No Data Found</h1>
+            <h1 style={{ margin: "0 40%", width: "100%" }}>No Data Found</h1>
           )}
         </div>
         <div>
@@ -133,10 +133,10 @@ const CartComponent = () => {
                 }}
               /> */}
               <Dropdown
-                placeholder='Select Friend'
+                placeholder="Apply Coupon"
                 selection
                 options={friendOptions}
-                onChange={(e,value)=>setOff(value.value)}
+                onChange={(e, value) => setOff(value.value)}
               />
               <div>
                 <h6 style={{ marginTop: "24px", marginBottom: "0" }}>
@@ -160,15 +160,14 @@ const CartComponent = () => {
                     <p>Total Discount</p>
                     <p>
                       <Icon disabled name="rupee sign" />
-                      {off ? Number(off)*SumTotal():0}
+                      {off ? (Number(off) * SumTotal()).toFixed(2) : 0}
                     </p>
                     <p>Actual Amount</p>
                     <p>
                       <Icon disabled name="rupee sign" />
-                      {off? SumTotal()-Number(off)*SumTotal(): SumTotal()}
+                      {off ? (SumTotal() - Number(off) * SumTotal()).toFixed(2) : SumTotal()}
                     </p>
                   </div>
-                 
                 </div>
               </div>
             </div>
