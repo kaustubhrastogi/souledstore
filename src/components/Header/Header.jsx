@@ -6,6 +6,7 @@ import {
   Icon,
   Dropdown,
   Button,
+  Popup,
 } from "semantic-ui-react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
@@ -16,6 +17,8 @@ import SearchComponent from "../SearchComponent/SearchComponent";
 import TryMock from "../../Data/TryMock";
 import { getGender } from "../../redux/genderDataReducer";
 import { logout } from "../../redux/login-reducer";
+// import TryMock from "../../Data/TryMock";
+// import { getGender } from "../../redux/genderDataReducer";
 
 const linkuri = [
   {
@@ -104,21 +107,36 @@ const Header = () => {
             <Menu.Menu position="right">
               <Menu.Item name="WishListComp" as={Link} to="/Contactus">
                 <p href="">
-                  <Icon name="user circle" size="big" />
+                  <Popup
+                    trigger={<Icon name="user circle" size="big" />}
+                    content="Contact Us"
+                    size="mini"
+                  />
+
                   <p>{userdata.loginData.name}</p>
                   {userdata.loginData.name ? (
-                    <Button
+                    <Popup
+                      trigger={
+                        <Button
+                          size="mini"
+                          secondary
+                          onClick={() => dispatch(logout())}
+                        >
+                          logout
+                        </Button>
+                      }
+                      content="Logout from Soul Fabric ?"
                       size="mini"
-                      secondary
-                      onClick={() => dispatch(logout())}
-                    >
-                      logout
-                    </Button>
+                    ></Popup>
                   ) : null}
                 </p>
               </Menu.Item>
               <Menu.Item name="WishListComp" as={Link} to="/WishListComp">
-                <Icon name="heart outline" size="big" />
+                <Popup
+                  trigger={<Icon name="heart outline" size="big" />}
+                  content="Wishlist"
+                  size="mini"
+                />
 
                 <Badge
                   bg="white"
@@ -130,7 +148,12 @@ const Header = () => {
               </Menu.Item>
 
               <Menu.Item as={Link} to="/cart">
-                <Icon name="in cart" size="big" />
+                <Popup
+                  trigger={<Icon name="in cart" size="big" />}
+                  content="My Cart"
+                  size="mini"
+                />
+
                 <Badge
                   bg="white"
                   className="badgestyle"
