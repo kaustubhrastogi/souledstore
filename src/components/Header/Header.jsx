@@ -17,6 +17,8 @@ import SearchComponent from "../SearchComponent/SearchComponent";
 import TryMock from "../../Data/TryMock";
 import { getGender } from "../../redux/genderDataReducer";
 import { logout } from "../../redux/login-reducer";
+// import TryMock from "../../Data/TryMock";
+// import { getGender } from "../../redux/genderDataReducer";
 
 const linkuri = [
   {

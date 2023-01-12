@@ -8,6 +8,7 @@ export default function SearchComponent() {
   const [searchInput, setSearchInput] = useState("");
   const APIData = SearchData;
   // console.log("searchdata=========>", APIData);
+//   console.log("searchdata=========>", APIData);
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
     if (searchInput !== "") {
