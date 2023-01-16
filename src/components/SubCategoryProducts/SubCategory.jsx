@@ -45,7 +45,7 @@ const SubCategory = () => {
   } else if (priceRange === "descending") {
     mockSample.sort((a, b) => (a.offPrice > b.offPrice ? -1 : 1));
   }
-  console.log("filter here....", genderItem);
+  // console.log("filter here....", genderItem);
 
   // ---------------------------------------------------------
   useEffect(() => {

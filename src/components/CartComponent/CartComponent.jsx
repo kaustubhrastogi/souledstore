@@ -77,7 +77,7 @@ const CartComponent = () => {
                           <Button
                             size="mini"
                             onClick={() => {
-                              dispatch(decrement(cartItem[curr].id));
+                              dispatch(decrement(cartItem[curr].img));
                             }}
                           >
                             {" "}
@@ -87,7 +87,7 @@ const CartComponent = () => {
                           <Button
                             size="mini"
                             onClick={() => {
-                              dispatch(increment(cartItem[curr].id));
+                              dispatch(increment(cartItem[curr].img));
                             }}
                           >
                             <Icon name="plus" />
@@ -96,7 +96,7 @@ const CartComponent = () => {
                       </p>
                       <Button
                         color="black"
-                        onClick={() => dispatch(removeFromCart(index))}
+                        onClick={() => dispatch(removeFromCart(cartItem[curr].img))}
                       >
                         <Icon name="trash alternate" /> Remove
                       </Button>

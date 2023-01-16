@@ -13,7 +13,7 @@ const WomenBannerData = {
   ]
 }
 function CarouselComp({gender}) {
-  console.log('=========> gender in croulsl', gender)
+  // console.log('=========> gender in croulsl', gender)
   return (
     <div>
       <Carousel>

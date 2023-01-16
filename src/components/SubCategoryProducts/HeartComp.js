@@ -6,13 +6,13 @@ import './SubCategory.css'
 export const HeartComp = ({mockSample,index,id}) => {
     const [heartColor, setHeartColor] = useState("white")
     const {wishListItem} = useSelector((state)=>state.wishList.data)
-    // console.log('wishListItem===>',wishListItem)
+    console.log('wishListItem===>',wishListItem)
     // console.log('mockSample===>',mockSample)
     // console.log('index==>',index)
     const dispatch = useDispatch()
     useEffect(()=>{
       wishListItem.map((e)=>{
-       if(mockSample.id===e.id){
+       if(mockSample.id===e.id && mockSample.name==e.name){
         setHeartColor("red")
        }
       })

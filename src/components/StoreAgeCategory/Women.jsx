@@ -26,7 +26,7 @@ const Women = () => {
         <div className="collection-cards">
           {womenCollection.map((i, index, name) => {
             {
-              console.log("womenCollection", womenCollection);
+              {/* console.log("womenCollection", womenCollection); */}
             }
             return (
               <div

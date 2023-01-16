@@ -19,23 +19,23 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addCart: (state, action) => {
-            //  state.data = {cartItem: [...state.data.cartItem, action.payload] }
-            state.data = { cartItem: { ...state.data.cartItem, [action.payload.id]: action.payload } }
-            console.log('reducer==>', state.data)
-        },
+        // addCart: (state, action) => {
+        //     //  state.data = {cartItem: [...state.data.cartItem, action.payload] }
+        //     state.data = { cartItem: { ...state.data.cartItem, [action.payload.img]: action.payload } }
+        //     console.log('reducer==>', state.data)
+        // },
         addCart: (state, action) => {
             if (Object.keys(state.data.cartItem).length === 0) {
                 state.data = {
-                    cartItem: { [action.payload.id]: { ...action.payload } },
+                    cartItem: { [action.payload.img]: { ...action.payload } },
                 };
-            } else if (state.data.cartItem.hasOwnProperty(action.payload.id)) {
-                let count1 = state.data.cartItem[action.payload.id].count + 1;
+            } else if (state.data.cartItem.hasOwnProperty(action.payload.id&& action.payload.name)) {
+                let count1 = state.data.cartItem[action.payload.img].count + 1;
                 state.data = {
                     cartItem: {
                         ...state.data.cartItem,
-                        [action.payload.id]: {
-                            ...state.data.cartItem[action.payload.id],
+                        [action.payload.img]: {
+                            ...state.data.cartItem[action.payload.img],
                             count: count1,
                         },
                     },
@@ -44,15 +44,22 @@ const cartSlice = createSlice({
                 state.data = {
                     cartItem: {
                         ...state.data.cartItem,
-                        [action.payload.id]: { ...action.payload },
+                        [action.payload.img]: { ...action.payload },
                     },
                 };
             }
+            // console.log("cartItem: ",state.data.cartItem)
         },
         removeFromCart: (state, action) => {
-            const newArray = Object.values(state.data.cartItem).filter((item, index) => index !== action.payload)
-            state.data = { cartItem: newArray }
+            let Item = delete state.data.cartItem[action.payload]
+            state.data={cartItem:{...state.data.cartItem, ...Item}}
+            console.log('item:',state.data.cartItem);
         },
+        // removeFromCart: (state, action) => {
+        //     const newArray = Object.values(state.data.cartItem).filter((item, index) => index !== action.payload)
+        //     state.data = { cartItem: newArray }
+        //     console.log('item:',state.data.cartItem);
+        // },
         removeAll: () => { },
         // inrement and decrement reducer
         increment: (state, action) => {
