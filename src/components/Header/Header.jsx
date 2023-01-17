@@ -61,7 +61,11 @@ const Header = () => {
       dispatch(getGender(TryMock.WOMEN));
     } else if (name === "MEN") {
       dispatch(getGender(TryMock.MEN));
-    } else {
+    }
+     else if (name === "CHILD") {
+      dispatch(getGender(TryMock.CHILD));
+    }
+     else {
       dispatch(TryMock.category);
     }
 

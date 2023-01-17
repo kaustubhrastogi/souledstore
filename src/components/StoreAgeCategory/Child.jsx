@@ -33,7 +33,7 @@ const Child = () => {
                 className="collection-card-prim"
                 onClick={() => dispatch(getCategory(index))}
               >
-                <div className="collection-card-prim-women">
+                <div className="collection-card-prim-child">
                   <Link to={`/subcategory/${index}`}>
                     <img key="{item}" src={i.img} alt="" />
                   </Link>
