@@ -43,3 +43,36 @@
     padding: 7px;
     margin-bottom: 19px;
 }
+
+@media only screen and (max-width: 600px) {
+    .footer-main{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-main .footer-child-one{
+        width: 100%;
+        margin: 16px auto;
+    }
+    .footer-main .footer-child-one p{
+        margin: 4px auto;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-main .footer-child-two{
+        width: 100%;
+        margin: 16px auto;
+    }
+    .footer-main .footer-child-two p{
+    }
+
+    .footer-child-four{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .footer-child-four h1{
+        justify-content: center;
+        text-align: center;
+    }
+
+}

@@ -50,6 +50,7 @@ const SubCategory = () => {
   // ---------------------------------------------------------
   useEffect(() => {
     // setMockSample(TryMock.category[id].data);
+
     setMockSample(genderItem[id].data);
   });
 

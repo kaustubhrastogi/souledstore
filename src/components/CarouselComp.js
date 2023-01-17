@@ -1,4 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
+import "./SubCategoryProducts/subcategoryproduct.css"
 const WomenBannerData = {
   womenBanner:[
     {
@@ -15,12 +16,12 @@ const WomenBannerData = {
 function CarouselComp({gender}) {
   // console.log('=========> gender in croulsl', gender)
   return (
-    <div>
+    <div className="carousel-main">
       <Carousel>
         {WomenBannerData.womenBanner.map((i) => {
           return (
             <Carousel.Item>
-              <img src={i.uri} alt="No Image" />
+              <img className="slide-img" src={i.uri} alt="No Image" />
               {/* <Carousel.Caption>
                 <h3>First slide label</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

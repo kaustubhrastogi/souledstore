@@ -57,11 +57,15 @@ const Header = () => {
   // console.log(itemSearch);
   const categoryFunc = (e, { name }) => {
     setActiveItem(name);
-    if (name == "WOMEN") {
+    if (name === "WOMEN") {
       dispatch(getGender(TryMock.WOMEN));
-    } else if (name == "MEN") {
+    } else if (name === "MEN") {
       dispatch(getGender(TryMock.MEN));
-    } else {
+    }
+     else if (name === "CHILD") {
+      dispatch(getGender(TryMock.CHILD));
+    }
+     else {
       dispatch(TryMock.category);
     }
 

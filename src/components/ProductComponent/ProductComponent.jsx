@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 import { addCart } from "../../redux/cart-reducer";
 
 const ProductComponent = () => {
-  const [ btn, setBtn]= useState(true)
+  const [btn, setBtn] = useState(true);
   const dispatch = useDispatch();
   const { categoryItem } = useSelector((state) => state.category.data);
   const { wishListItem } = useSelector((state) => state.wishList.data);
@@ -53,7 +53,7 @@ const ProductComponent = () => {
           <h3>
             <Icon name="rupee sign" />
             {offPrice}
-            <strike>
+            <strike style={{ color: "grey" }}>
               <Icon name="rupee sign" />
               {price}
             </strike>
