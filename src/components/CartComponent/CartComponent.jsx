@@ -77,7 +77,7 @@ const CartComponent = () => {
                           <Button
                             size="mini"
                             onClick={() => {
-                              dispatch(decrement(cartItem[curr].id));
+                              dispatch(decrement(cartItem[curr].img));
                             }}
                           >
                             {" "}
@@ -87,7 +87,7 @@ const CartComponent = () => {
                           <Button
                             size="mini"
                             onClick={() => {
-                              dispatch(increment(cartItem[curr].id));
+                              dispatch(increment(cartItem[curr].img));
                             }}
                           >
                             <Icon name="plus" />
@@ -96,7 +96,7 @@ const CartComponent = () => {
                       </p>
                       <Button
                         color="black"
-                        onClick={() => dispatch(removeFromCart(index))}
+                        onClick={() => dispatch(removeFromCart(cartItem[curr].img))}
                       >
                         <Icon name="trash alternate" /> Remove
                       </Button>
@@ -107,21 +107,24 @@ const CartComponent = () => {
               </div>
             ))
           ) : (
-            <h1 style={{ margin: "0 40%", width: "100%" }}>No Data Found</h1>
+            <h1 style={{ margin: "0 40%", width: "100%" }}>
+              Your Cart Is Empty !
+            </h1>
           )}
         </div>
         <div>
           {cartItem && Object.keys(cartItem).length > 0 ? (
-            <div className="cart-product-order">
-              <Button positive animated="vertical">
-                <Button.Content hidden>
-                  PLACE ORDER <Icon name="cart plus" size="large" />
-                </Button.Content>
-                <Button.Content c visible>
-                  PLACE ORDER
-                </Button.Content>
-              </Button>
-              {/* <Input
+            <>
+              <div className="cart-product-order">
+                <Button positive animated="vertical">
+                  <Button.Content hidden>
+                    PLACE ORDER <Icon name="cart plus" size="large" />
+                  </Button.Content>
+                  <Button.Content c visible>
+                    PLACE ORDER
+                  </Button.Content>
+                </Button>
+                {/* <Input
                 size="mini"
                 icon="tags"
                 iconPosition="left"
@@ -132,45 +135,48 @@ const CartComponent = () => {
                   console.log(e.target.value);
                 }}
               /> */}
-              <Dropdown
-                placeholder="Apply Coupon"
-                selection
-                options={friendOptions}
-                onChange={(e, value) => setOff(value.value)}
-              />
-              <div>
-                <h6 style={{ marginTop: "24px", marginBottom: "0" }}>
-                  BILLING DETAILS
-                </h6>
-                <div className="billing-details">
-                  <div>
-                    <p>Cart Total</p>
-                    <p>{Object.keys(cartItem).length}</p>
-                  </div>
-                  {/* <p>Discount</p> */}
-                  <div>
-                    <p>GST 18%</p>
-                  </div>
-                  <div>
-                    <p>Total Amount</p>
-                    <p>
-                      <Icon disabled name="rupee sign" />
-                      {SumTotal()}
-                    </p>
-                    <p>Total Discount</p>
-                    <p>
-                      <Icon disabled name="rupee sign" />
-                      {off ? (Number(off) * SumTotal()).toFixed(2) : 0}
-                    </p>
-                    <p>Actual Amount</p>
-                    <p>
-                      <Icon disabled name="rupee sign" />
-                      {off ? (SumTotal() - Number(off) * SumTotal()).toFixed(2) : SumTotal()}
-                    </p>
+                <Dropdown
+                  placeholder="Apply Coupon"
+                  selection
+                  options={friendOptions}
+                  onChange={(e, value) => setOff(value.value)}
+                />
+                <div>
+                  <h6 style={{ marginTop: "24px", marginBottom: "0" }}>
+                    BILLING DETAILS
+                  </h6>
+                  <div className="billing-details">
+                    <div>
+                      <p>Cart Total</p>
+                      <p>{Object.keys(cartItem).length}</p>
+                    </div>
+                    {/* <p>Discount</p> */}
+                    <div>
+                      <p>GST 18%</p>
+                    </div>
+                    <div>
+                      <p>Total Amount</p>
+                      <p>
+                        <Icon disabled name="rupee sign" />
+                        {SumTotal()}
+                      </p>
+                      <p>Total Discount</p>
+                      <p>
+                        <Icon disabled name="rupee sign" />
+                        {off ? (Number(off) * SumTotal()).toFixed(2) : 0}
+                      </p>
+                      <p>Actual Amount</p>
+                      <p>
+                        <Icon disabled name="rupee sign" />
+                        {off
+                          ? (SumTotal() - Number(off) * SumTotal()).toFixed(2)
+                          : SumTotal()}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </>
           ) : (
             ""
           )}

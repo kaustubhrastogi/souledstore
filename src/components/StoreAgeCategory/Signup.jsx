@@ -22,27 +22,38 @@ export default function Signup({ register }) {
         const info = { name: name, email: email, password: password };
         setDataInput([info]);
 
-        dispatch(login(info));
-        let olddata = localStorage.getItem('datainput');    
-        let oldArr = JSON.parse(olddata)
+        
+        let olddata =JSON.parse( localStorage.getItem('datainput'));  
+        // console.log("olddata=========>",olddata)  
+        let oldArr =  olddata
         
         if (!olddata  ) {
-            olddata = []
+           olddata=[]
             olddata.push(info)
             localStorage.setItem('datainput', JSON.stringify(olddata));
             setSubmitted(true);
             navigate(`/`);
+            dispatch(login(info));
            
         } 
     
         else {
-            let oldArr = JSON.parse(olddata)
-            oldArr.push(info)
-            localStorage.setItem("datainput", JSON.stringify(oldArr))
-            console.log(oldArr, 'hhg')
-            setSubmitted(true);
-            navigate(`/`);
-            
+           
+
+           const user= oldArr.filter((i)=>i.email==email)  
+           console.log("uuuuu===>",user) 
+            if(user[0]){
+           
+                setInfor(" already added")
+            }
+            else {
+                oldArr.push(info)
+             
+                localStorage.setItem("datainput", JSON.stringify(oldArr))
+                dispatch(login(info));
+                setSubmitted(true);
+                navigate(`/`);
+            }
         }
     }
     const handleName = (e) => {
@@ -90,13 +101,14 @@ export default function Signup({ register }) {
                     <Segment >
                         <div className='divspace'>
                             <h1>User Registration</h1>
-                            <h3>{infor}</h3>
+                            
                         </div>
 
                         <img
                             className="appLogo"
                             src="https://www.thesouledstore.com/static/img/300x157-twitter.png"
                         />
+                        <h1 style={{color:'red'}}>{infor}</h1>
                         <Form onSubmit={submitThis}>
 
 

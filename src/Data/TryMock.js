@@ -584,6 +584,7 @@ const TryMock = {
           percentOff: "33%",
           count: 1,
         },
+
         {
           id: 2,
           name: "The Simpsons: Haters",
@@ -642,6 +643,173 @@ const TryMock = {
             "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1645689551_4126373.jpg?format=webp&w=360&dpr=1.0",
           price: 889,
           offPrice: 649,
+          percentOff: "43%",
+          count: 1,
+        },
+      ],
+    },
+  ],
+  CHILD: [
+    {
+      category: "Shirts",
+      cardOneHead: "SWEATSHIRTS & SWEATERS",
+      data: [
+        {
+          id: 1,
+          name: "Spider-Man: Graphic",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669475324_2606665.jpg?format=webp&w=240&dpr=1.0",
+          category: "Sweatshirts",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669475324_5582286.jpg?format=webp&w=360&dpr=1.0",
+          price: 949,
+          offPrice: 699,
+          percentOff: "43%",
+          count: 1,
+        },
+        {
+          id: 2,
+          name: "Batman: Fear The Bat",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666157994_4875823.jpg?format=webp&w=240&dpr=1.0",
+          category: "Sweatshirts",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666157994_8669819.jpg?format=webp&w=360&dpr=1.0",
+          price: 949,
+          offPrice: 699,
+          percentOff: "43%",
+          count: 1,
+        },
+
+        {
+          id: 3,
+          name: "Marvel: Logo Regular",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1671900577_2742521.jpg?format=webp&w=240&dpr=1.0",
+          category: " Sweatshirts",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1671900604_5976697.jpg?format=webp&w=360&dpr=1.0",
+          price: 599,
+          offPrice: 359,
+          percentOff: "34%",
+          count: 1,
+        },
+        {
+          id: 4,
+          name: "Courage: Happy Face",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1663392424_7363815.jpg?format=webp&w=240&dpr=1.0",
+          category: "Sweatshirts",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1663392449_2939956.jpg?format=webp&w=360&dpr=1.0",
+          price: 749,
+          offPrice: 599,
+          percentOff: "43%",
+          count: 1,
+        },
+      ],
+    },
+    {
+      category: "t-shirt",
+      cardOneHead: "HOODIES & JACKETS",
+      data: [
+        {
+          id: 1,
+          name: "Powerpuff Girls: Buttercup",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1671896581_7912648.jpg?format=webp&w=240&dpr=1.0",
+          category: "hoodies",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669477498_8030477.jpg?format=webp&w=360&dpr=1.0",
+          price: 849,
+          offPrice: 699,
+          percentOff: "43%",
+          count: 1,
+        },
+        {
+          id: 2,
+          name: "Justice League : 90's",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669620059_7253374.jpg?format=webp&w=360&dpr=1.0",
+          category: "hoodies",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1669620059_8360995.jpg?format=webp&w=360&dpr=1.0",
+          price: 1249,
+          offPrice: 1199,
+          percentOff: "43%",
+          count: 1,
+        },
+
+        {
+          id: 3,
+          name: "Lion King: Simba",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670326774_7388402.jpg?format=webp&w=360&dpr=1.0",
+          category: "hoodies",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670326774_9300425.jpg?format=webp&w=360&dpr=1.0",
+          price: 599,
+          offPrice: 359,
+          percentOff: "34%",
+          count: 1,
+        },
+        {
+          id: 4,
+          name: "Looney Tunes: Squad ",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667973372_5386031.jpg?format=webp&w=360&dpr=1.0",
+          category: "hoodies",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667973372_3202548.jpg?format=webp&w=360&dpr=1.0",
+          price: 749,
+          offPrice: 599,
+          percentOff: "43%",
+          count: 1,
+        },
+      ],
+    },
+    {
+      category: "Hoodies",
+      cardOneHead: `NEW ARRIVAL COLLECTION`,
+      data: [
+        {
+          id: 1,
+          name: "Minions: One In Minion",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667898901_9647623.jpg?format=webp&w=240&dpr=1.0",
+          category: "special",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667898901_7726273.jpg?format=webp&w=360&dpr=1.0",
+          price: 849,
+          offPrice: 699,
+          percentOff: "33%",
+          count: 1,
+        },
+        {
+          id: 2,
+          name: "Harry Potter: Reward",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670691292_5671628.jpg?format=webp&w=240&dpr=1.0",
+          category: "special",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670691292_7913251.jpg?format=webp&w=360&dpr=1.0",
+          price: 749,
+          offPrice: 679,
+          percentOff: "23%",
+          count: 1,
+        },
+
+        {
+          id: 3,
+          name: "Disney: Pawfect",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1671897825_6354746.jpg?format=webp&w=240&dpr=1.0",
+          category: " special",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1671897854_3893967.jpg?format=webp&w=360&dpr=1.0",
+          price: 599,
+          offPrice: 359,
+          percentOff: "34%",
+          count: 1,
+        },
+        {
+          id: 4,
+          name: "Manchester City: Logo",
+          img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1665594343_1758277.jpg?format=webp&w=240&dpr=1.0",
+          category: "special",
+          imgMove:
+            "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1665594343_5899032.jpg?format=webp&w=360&dpr=1.0",
+          price: 749,
+          offPrice: 599,
           percentOff: "43%",
           count: 1,
         },

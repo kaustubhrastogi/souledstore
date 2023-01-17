@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SubCategoryCard from "./SubCategoryCard";
 import "./SubCategory.css";
-import { Button, Icon, Input } from "semantic-ui-react";
+import { Button, Icon, Input, Popup } from "semantic-ui-react";
 import { HeartComp } from "./HeartComp";
 import { useParams } from "react-router-dom";
 import TryMock from "../../Data/TryMock";
@@ -45,11 +45,12 @@ const SubCategory = () => {
   } else if (priceRange === "descending") {
     mockSample.sort((a, b) => (a.offPrice > b.offPrice ? -1 : 1));
   }
-  console.log("filter here....", genderItem);
+  // console.log("filter here....", genderItem);
 
   // ---------------------------------------------------------
   useEffect(() => {
     // setMockSample(TryMock.category[id].data);
+
     setMockSample(genderItem[id].data);
   });
 
